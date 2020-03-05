@@ -81,7 +81,7 @@ class WorldMap extends Component {
       property: "fill",
       target: worldSeries.mapPolygons.template,
       minValue: 0,
-      maxValue: Math.log(80313),
+      maxValue: Math.log(this.props.max),
       min: am4core.color(this.minColor),
       max: am4core.color(this.maxColor),
     });

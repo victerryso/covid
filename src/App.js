@@ -59,6 +59,10 @@ function App() {
       value: data.find(({ date }) => date === currentDate)[status]
     }))
 
+    let max = mapData.map(({ data }) => {
+      return data.find(({ date }) => date === dates[dates.length - 1])[status]
+    }).reduce((memo, value) => memo + value, 0)
+
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -104,6 +108,7 @@ function App() {
               status={status}
               country={country}
               onClick={setCountry}
+              max={max}
             />
 
             <Timeline
