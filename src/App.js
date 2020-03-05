@@ -11,15 +11,21 @@ import Timeline from './components/Timeline';
 import WorldMap from './components/WorldMap'
 import DateCounter from './components/DateCounter'
 import TotalCounter from './components/TotalCounter'
+import DateSelect from './components/DateSelect'
 import StatusSelect from './components/StatusSelect'
 import DailyUpdate from './components/DailyUpdate'
 
 const useStyles = makeStyles(theme => ({
-  container: {
+  main: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100vh',
     position: 'relative',
+  },
+  top: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    margin: theme.spacing(2, 0, 0)
   },
 }));
 
@@ -57,49 +63,65 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Container maxWidth='xl' className={classes.container}>
+        <Container maxWidth='lg'>
 
-          <WorldMap
-            mapData={data}
-            date={currentDate}
-            status={status}
-            country={country}
-            onClick={setCountry}
-          />
+          <div className={classes.top}>
 
-          <Timeline
-            min={dates[0]}
-            max={dates[dates.length - 1]}
-            step={dates[1] - dates[0]}
-            value={currentDate}
-            onChange={handleChange}
-          />
+            <DateCounter
+              mapData={mapData}
+              date={currentDate}
+            />
 
-          <StatusSelect
-            status={status}
-            handleChange={setStatus}
-          />
+            <TotalCounter
+              mapData={data}
+              date={currentDate}
+              status={status}
+              country={country}
+            />
 
-          {/*
-          <DateCounter
-            mapData={mapData}
-            date={currentDate}
-          />
-          */}
+          </div>
 
-          <TotalCounter
-            mapData={data}
-            date={currentDate}
-            status={status}
-            country={country}
-          />
+          <div className={classes.top}>
 
-          <DailyUpdate
-            mapData={mapData}
-            date={currentDate}
-            status={status}
-            country={country}
-          />
+            <DateSelect
+              date={currentDate}
+              dates={dates}
+              handleChange={setDate}
+            />
+
+            <StatusSelect
+              status={status}
+              handleChange={setStatus}
+            />
+
+          </div>
+
+          <div className={classes.main}>
+
+            <WorldMap
+              mapData={data}
+              date={currentDate}
+              status={status}
+              country={country}
+              onClick={setCountry}
+            />
+
+            <Timeline
+              min={dates[0]}
+              max={dates[dates.length - 1]}
+              step={dates[1] - dates[0]}
+              value={currentDate}
+              onChange={handleChange}
+            />
+
+            <DailyUpdate
+              mapData={mapData}
+              date={currentDate}
+              status={status}
+              country={country}
+            />
+
+          </div>
 
         </Container>
 

@@ -1,21 +1,21 @@
 import React from 'react';
+import moment from 'moment'
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-const StatusSelect = props => (
+const DateSelect = props => (
   <FormControl>
     <Select
       displayEmpty
-      value={props.status}
+      value={props.date}
       onChange={event => props.handleChange(event.target.value)}
     >
-      <MenuItem value='confirmed'>Confirmed</MenuItem>
-      <MenuItem value='deaths'>Deaths</MenuItem>
-      <MenuItem value='recovered'>Recovered</MenuItem>
-      <MenuItem value='existing'>Existing</MenuItem>
+      {props.dates.map((value, index) => (
+        <MenuItem value={value}>{moment.utc(value).format('MMMM Do')}</MenuItem>
+      ))}
     </Select>
   </FormControl>
 )
 
-export default StatusSelect
+export default DateSelect

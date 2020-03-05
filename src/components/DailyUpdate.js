@@ -87,7 +87,7 @@ const DailyUpdate = function (props) {
       <ListItemIcon><span>Day {day}</span></ListItemIcon>
 
       <div className={classes.grow}>
-        {moment.utc(props.date).format('MMMM Do')}
+        {moment.utc(props.date).format('MMM Do')}
       </div>
 
       <div className={classes.flex}>
