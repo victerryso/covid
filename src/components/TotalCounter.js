@@ -5,7 +5,7 @@ const TotalCounter = function (props) {
   const total = props.mapData.reduce((memo, { value }) => memo + value, 0)
 
   return (
-    <Typography variant='h5'>
+    <Typography variant='h4'>
       {total.toLocaleString()}
     </Typography>
   )

@@ -12,7 +12,7 @@ const DateSelect = props => (
       onChange={event => props.handleChange(event.target.value)}
     >
       {props.dates.map((value, index) => (
-        <MenuItem value={value}>{moment.utc(value).format('MMMM Do')}</MenuItem>
+        <MenuItem value={value} key={index}>{moment.utc(value).format('MMMM Do')}</MenuItem>
       ))}
     </Select>
   </FormControl>

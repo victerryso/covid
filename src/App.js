@@ -63,7 +63,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Container maxWidth='lg'>
+        <Container>
 
           <div className={classes.top}>
 

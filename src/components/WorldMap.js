@@ -11,7 +11,7 @@ import countries from '../data/countries.json'
 import states from '../data/get-state-ids.json'
 
 // Themes begin
-// am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_animated);
 
 class WorldMap extends Component {
   color = red[500]
@@ -212,8 +212,6 @@ class WorldMap extends Component {
         let series = this.chart.series.values[0]
 
         series.data = this.getCountriesData()
-        this.chart.invalidateData()
-        series.invalidateData()
       }
 
       let series = this.chart.series.values[2]
