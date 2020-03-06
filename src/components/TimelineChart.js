@@ -5,6 +5,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_dark from "@amcharts/amcharts4/themes/dark";
 import red from '@material-ui/core/colors/red';
+import green from '@material-ui/core/colors/green';
 
 
 /* Chart code */
@@ -55,7 +56,7 @@ class TimelineChart extends Component {
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     // dateAxis.renderer.minGridDistance = 60;
 
-    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    chart.yAxes.push(new am4charts.ValueAxis());
 
     // Create series
     let lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -81,8 +82,8 @@ class TimelineChart extends Component {
     // columnSeries.name = "Income";
     columnSeries.dataFields.valueY = "value";
     columnSeries.dataFields.dateX = "date";
-    columnSeries.fill = am4core.color(this.color);
-    columnSeries.stroke = am4core.color(this.color);
+    columnSeries.fill = am4core.color(green[500]);
+    columnSeries.stroke = am4core.color(green[500]);
 
     // columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
     // columnSeries.columns.template.propertyFields.fillOpacity = "fillOpacity";
