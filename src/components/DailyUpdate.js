@@ -14,11 +14,8 @@ import green from '@material-ui/core/colors/green';
 import flags from '../data/country-flags.json'
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    // position: 'absolute',
-    bottom: theme.spacing(6),
-    left: 0,
-    margin: theme.spacing(2)
+  paper: {
+    width: '100%',
   },
 
   items: {
@@ -98,26 +95,24 @@ const DailyUpdate = function (props) {
   )
 
   return (
-    <div className={classes.container}>
-      <Paper className={classes.root}>
-        <List dense subheader={subheader}>
-          <div className={classes.items}>
-            {countries.map(({ flag, country, increment, count }, index) => (
-              <ListItem key={index}>
-                <ListItemIcon><span>{flag}</span></ListItemIcon>
-                <ListItemText
-                  primary={country}
-                />
-                <ListItemSecondaryAction className={classes.flex}>
-                  <div className={classes.increment}>+{increment.toLocaleString()}</div>
-                  <div className={classes.count}>{count.toLocaleString()}</div>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </div>
-        </List>
-      </Paper>
-    </div>
+    <Paper className={classes.paper}>
+      <List dense subheader={subheader}>
+        <div className={classes.items}>
+          {countries.map(({ flag, country, increment, count }, index) => (
+            <ListItem key={index}>
+              <ListItemIcon><span>{flag}</span></ListItemIcon>
+              <ListItemText
+                primary={country}
+              />
+              <ListItemSecondaryAction className={classes.flex}>
+                <div className={classes.increment}>+{increment.toLocaleString()}</div>
+                <div className={classes.count}>{count.toLocaleString()}</div>
+              </ListItemSecondaryAction>
+            </ListItem>
+          ))}
+        </div>
+      </List>
+    </Paper>
   )
 }
 

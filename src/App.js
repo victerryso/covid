@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import red from '@material-ui/core/colors/red';
 import 'typeface-roboto';
@@ -14,6 +15,7 @@ import TotalCounter from './components/TotalCounter'
 import DateSelect from './components/DateSelect'
 import StatusSelect from './components/StatusSelect'
 import DailyUpdate from './components/DailyUpdate'
+import TimelineChart from './components/TimelineChart'
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -25,8 +27,11 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: theme.spacing(2, 0, 1)
+    margin: theme.spacing(2, 0)
   },
+  paper: {
+    width: '100%',
+  }
 }));
 
 const theme = createMuiTheme({
@@ -119,12 +124,28 @@ function App() {
               onChange={handleChange}
             />
 
-            <DailyUpdate
-              mapData={mapData}
-              date={currentDate}
-              status={status}
-              country={country}
-            />
+            <Grid container spacing={1}>
+
+              <Grid item sm className={classes.paper}>
+                <DailyUpdate
+                  mapData={mapData}
+                  date={currentDate}
+                  status={status}
+                  country={country}
+                />
+              </Grid>
+
+              <Grid item sm className={classes.paper}>
+                <TimelineChart
+                  mapData={mapData}
+                  date={currentDate}
+                  status={status}
+                  country={country}
+                  dates={dates}
+                />
+              </Grid>
+
+            </Grid>
 
           </div>
 
