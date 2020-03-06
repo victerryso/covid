@@ -1,21 +1,19 @@
-import React from 'react';
-import moment from 'moment'
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import React, { useState } from 'react';
+import MomentUtils from '@date-io/moment'; // choose your lib
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 
 const DateSelect = props => (
-  <FormControl>
-    <Select
-      displayEmpty
-      value={props.date}
-      onChange={event => props.handleChange(event.target.value)}
-    >
-      {props.dates.map((value, index) => (
-        <MenuItem value={value} key={index}>{moment.utc(value).format('MMMM Do')}</MenuItem>
-      ))}
-    </Select>
-  </FormControl>
+  <MuiPickersUtilsProvider utils={MomentUtils}>
+    <KeyboardDatePicker
+      style={{ width: 140 }}
+      variant="dialog"
+      format="DD/MM/YYYY"
+      value={console.log(props.date) || props.date}
+      onChange={date => props.handleChange(+date)}
+      minDate={props.dates[0]}
+      maxDate={props.dates[props.dates.length - 1]}
+    />
+  </MuiPickersUtilsProvider>
 )
 
 export default DateSelect

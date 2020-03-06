@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: theme.spacing(2, 0, 0)
+    margin: theme.spacing(2, 0, 1)
   },
 }));
 
@@ -67,7 +67,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Container>
+        <Container maxWidth='xl'>
 
           <div className={classes.top}>
 
