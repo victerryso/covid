@@ -8,7 +8,7 @@ const DateSelect = props => (
       style={{ width: 140 }}
       variant="dialog"
       format="DD/MM/YYYY"
-      value={console.log(props.date) || props.date}
+      value={props.date}
       onChange={date => props.handleChange(+date)}
       minDate={props.dates[0]}
       maxDate={props.dates[props.dates.length - 1]}
