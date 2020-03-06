@@ -85,6 +85,7 @@ const getCovidData = async () => {
         }))
         .value()
     }))
+    .filter(({ country }) => country)
     .value()
 }
 
