@@ -6,7 +6,7 @@ const DateSelect = props => (
   <MuiPickersUtilsProvider utils={MomentUtils}>
     <KeyboardDatePicker
       style={{ width: 140 }}
-      variant="dialog"
+      variant="inline"
       format="DD/MM/YYYY"
       value={props.date}
       onChange={date => props.handleChange(+date)}

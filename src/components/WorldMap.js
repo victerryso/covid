@@ -32,9 +32,10 @@ class WorldMap extends Component {
 
       return {
         id,
+        country,
         map: maps[0],
         value: value ? Math.log(value) + 1 : undefined,
-        tooltip: value ? `${country} (${value})` : country,
+        tooltip: value ? `${country}: ${value}` : country,
       }
     })
   }
@@ -50,7 +51,7 @@ class WorldMap extends Component {
       return {
         id,
         value: value ? Math.log(value) + 1 : undefined,
-        tooltip: value ? `${state} (${value})` : state,
+        tooltip: value ? `${state}: ${value}` : state,
       }
     })
   }
@@ -62,7 +63,7 @@ class WorldMap extends Component {
         longitude: +longitude,
         latitude: +latitude,
         color: this.color,
-        tooltip: `${state} (${value})`
+        tooltip: `${state}: ${value}`
       }))
       .value()
   }
@@ -122,7 +123,8 @@ class WorldMap extends Component {
 
     // Set up click events
     worldPolygon.events.on("hit", ev => {
-      let { name, map } = ev.target.dataItem.dataContext
+      let { name, country, map } = ev.target.dataItem.dataContext
+      this.props.onClick(country)
 
       if (map && this.hasStateData(name)) {
         ev.target.series.chart.zoomToMapObject(ev.target);
@@ -133,8 +135,6 @@ class WorldMap extends Component {
         let name = ev.target.dataItem.dataContext.name
 
         countrySeries.data = this.getStatesData(name, map)
-
-        this.props.onClick(name)
       }
     });
 
