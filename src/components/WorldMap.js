@@ -188,6 +188,7 @@ class WorldMap extends Component {
     homeButton.icon = new am4core.Sprite();
     homeButton.padding(7, 5, 7, 5);
     homeButton.width = 30;
+    homeButton.icon.fill = '#bbb'
     homeButton.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
     homeButton.marginBottom = 10;
     homeButton.parent = chart.zoomControl;

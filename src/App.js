@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 import red from '@material-ui/core/colors/red';
 import 'typeface-roboto';
 
@@ -14,8 +16,9 @@ import DateCounter from './components/DateCounter'
 import TotalCounter from './components/TotalCounter'
 import DateSelect from './components/DateSelect'
 import StatusSelect from './components/StatusSelect'
-import DailyUpdate from './components/DailyUpdate'
+import DailyTable from './components/DailyTable'
 import TimelineChart from './components/TimelineChart'
+import Statistics from './components/Statistics'
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -25,12 +28,15 @@ const useStyles = makeStyles(theme => ({
   },
   top: {
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'space-between',
     margin: theme.spacing(2, 0)
   },
   paper: {
     width: '100%',
+  },
+
+  alignRight: {
+    textAlign: 'right'
   }
 }));
 
@@ -76,34 +82,49 @@ function App() {
 
           <div className={classes.top}>
 
-            <DateCounter
-              mapData={mapData}
-              date={currentDate}
-            />
+            <div>
+              <DateCounter
+                mapData={mapData}
+                date={currentDate}
+              />
 
-            <TotalCounter
-              mapData={data}
-              date={currentDate}
-              status={status}
-              country={country}
-            />
+              <DateSelect
+                date={currentDate}
+                dates={dates}
+                handleChange={setDate}
+              />
+            </div>
+
+            <Hidden xsDown>
+              <Typography variant='h3'>
+                COVID-19
+              </Typography>
+            </Hidden>
+
+            <div className={classes.alignRight}>
+              <TotalCounter
+                mapData={data}
+                date={currentDate}
+                status={status}
+                country={country}
+              />
+
+              <StatusSelect
+                status={status}
+                handleChange={setStatus}
+              />
+            </div>
 
           </div>
 
-          <div className={classes.top}>
-
-            <DateSelect
-              date={currentDate}
-              dates={dates}
-              handleChange={setDate}
-            />
-
-            <StatusSelect
-              status={status}
-              handleChange={setStatus}
-            />
-
-          </div>
+          <Hidden xsDown>
+            <div className={classes.top}>
+              <Statistics
+                mapData={mapData}
+                date={currentDate}
+              />
+            </div>
+          </Hidden>
 
           <div className={classes.main}>
 
@@ -127,11 +148,12 @@ function App() {
             <Grid container spacing={1}>
 
               <Grid item sm className={classes.paper}>
-                <DailyUpdate
+                <DailyTable
                   mapData={mapData}
                   date={currentDate}
                   status={status}
                   country={country}
+                  handleClick={setCountry}
                 />
               </Grid>
 

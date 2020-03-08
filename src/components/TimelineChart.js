@@ -66,6 +66,12 @@ class TimelineChart extends Component {
       .value()
   }
 
+  applyData(index, data) {
+    if (!_.isEqual(this.chart.series.values[index].data, data)) {
+      this.chart.series.values[index].data = data
+    }
+  }
+
   componentDidMount() {
     // Create chart instance
     let chart = am4core.create("timeline-chart", am4charts.XYChart);
@@ -140,9 +146,9 @@ class TimelineChart extends Component {
 
   render() {
     if (this.chart) {
-      this.chart.series.values[0].data = this.getLineData()
-      this.chart.series.values[1].data = this.getColumnData()
-      this.chart.series.values[2].data = this.getCountryData()
+      this.applyData(0, this.getLineData())
+      this.applyData(1, this.getColumnData())
+      this.applyData(2, this.getCountryData())
     }
 
     return (

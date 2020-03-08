@@ -19,14 +19,14 @@ let fixStateName = ({ state, country }) => {
     let id = state.replace(/^.*,/g, '').trim()
     let ids = _.invert(getStateIds[country])
 
-    return ids['CA-' + id]
+    return ids['CA-' + id] || id
   }
 
   if (country === 'US') {
     let id = state.replace(/^.*,/g, '').trim()
     let ids = _.invert(getStateIds['United States'])
 
-    return ids['US-' + id]
+    return ids['US-' + id] || id
   }
 }
 
