@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment'
 import _ from 'underscore'
 import Slider from '@material-ui/core/Slider'
@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
 
 const Timeline = function (props) {
   const classes = useStyles();
+  const [value, setValue] = useState(props.value)
 
   const formatLabel = value => moment.utc(value).format('Do')
 
@@ -28,8 +29,13 @@ const Timeline = function (props) {
   return (
     <div className={classes.container}>
       <Slider
-        {...props}
+        min={props.min}
+        max={props.max}
+        step={props.step}
         marks={marks}
+        value={value}
+        onChange={(event, value) => setValue(value)}
+        onChangeCommitted={(event, value) => props.handleChange(value)}
         valueLabelDisplay='auto'
         valueLabelFormat={formatLabel}
       />

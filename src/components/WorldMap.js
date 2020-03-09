@@ -128,7 +128,7 @@ class WorldMap extends Component {
 
       if (map && this.hasStateData(name)) {
         ev.target.series.chart.zoomToMapObject(ev.target);
-        ev.target.isHover = false;
+        // ev.target.isHover = false;
         countrySeries.geodataSource.url = "https://www.amcharts.com/lib/4/geodata/json/" + map + ".json";
         countrySeries.geodataSource.load();
 
@@ -205,19 +205,17 @@ class WorldMap extends Component {
 
   render() {
     if (this.chart) {
-      if (this.props.country) {
-        let series = this.chart.series.values[1]
+      let values = [
+        this.getCountriesData(),
+        this.props.country && this.getStatesData(this.props.country),
+        this.getOtherData(),
+      ]
 
-        series.data = this.getStatesData(this.props.country)
-      } else {
-        let series = this.chart.series.values[0]
-
-        series.data = this.getCountriesData()
-      }
-
-      let series = this.chart.series.values[2]
-
-      series.data = this.getOtherData()
+      values.forEach((value, index) => {
+        if (value) {
+          this.chart.series.values[index].data = value
+        }
+      })
     }
 
     return (
@@ -231,4 +229,3 @@ class WorldMap extends Component {
 }
 
 export default WorldMap
-

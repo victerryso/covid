@@ -55,8 +55,6 @@ function App() {
   const [status, setStatus] = useState('confirmed');
   const [country, setCountry] = useState();
 
-  const handleChange = (event, value) => setDate(value)
-
   useEffect(() => {
     getCovidData().then(setMapData)
   }, [])
@@ -142,7 +140,7 @@ function App() {
               max={dates[dates.length - 1]}
               step={dates[1] - dates[0]}
               value={currentDate}
-              onChange={handleChange}
+              handleChange={setDate}
             />
 
             <Grid container spacing={1}>
