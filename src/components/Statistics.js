@@ -20,12 +20,32 @@ const Statistics = function (props) {
 
   const getValue = ({ date, status }) => {
     return _.chain(props.mapData)
+      .filter(({ country }) => props.country ? country === props.country : true)
       .reject(country => country === 'Others')
       .pluck('data')
       .flatten()
       .where({ date })
       .pluck(status)
       .reduce((memo, value) => memo + value, 0)
+      .value()
+  }
+
+  const getIncrementValue = status => {
+    return getValue({ date, status }) - getValue({ date: previousDate, status})
+  }
+
+  const getCountryValue = date => {
+    if (props.country) {
+      return 1
+    }
+
+    return _.chain(props.mapData)
+      .filter(({ country }) => props.country ? country === props.country : true)
+      .reject(country => country === 'Others')
+      .filter(({ data }) => _.findWhere(data, { date }).confirmed)
+      .pluck('country')
+      .uniq()
+      .result('length')
       .value()
   }
 
@@ -43,57 +63,28 @@ const Statistics = function (props) {
   let stats = [
     {
       label: 'Countries',
-      value: _.chain(props.mapData)
-        .filter(({ data }) => {
-          return _.findWhere(data, { date }).confirmed
-        })
-        .pluck('country')
-        .uniq()
-        .reject(country => country === 'Others')
-        .result('length')
-        .value()
-        .toLocaleString(),
-      increment: _.chain(props.mapData)
-        .filter(({ data }) => {
-          return _.findWhere(data, { date }).confirmed
-        })
-        .pluck('country')
-        .uniq()
-        .reject(country => country === 'Others')
-        .result('length')
-        .value()
-        .toLocaleString() - _.chain(props.mapData)
-        .filter(({ data }) => {
-          let value = _.findWhere(data, { date: previousDate })
-
-          return value && value.confirmed
-        })
-        .compact()
-        .pluck('country')
-        .uniq()
-        .reject(country => country === 'Others')
-        .result('length')
-        .value()
+      value: getCountryValue(date).toLocaleString(),
+      increment: getCountryValue(date) - getCountryValue(previousDate)
     },
     {
       label: 'Confirmed',
       value: getValue({ date, status: 'confirmed' }),
-      increment: getValue({ date, status: 'confirmed' }) - getValue({ date: previousDate, status: 'confirmed' }),
+      increment: getIncrementValue('confirmed'),
     },
     {
       label: 'Deaths',
       value: getValue({ date, status: 'deaths' }),
-      increment: getValue({ date, status: 'deaths' }) - getValue({ date: previousDate, status: 'deaths' }),
+      increment: getIncrementValue('deaths'),
     },
     {
       label: 'Recovered',
       value: getValue({ date, status: 'recovered' }),
-      increment: getValue({ date, status: 'recovered' }) - getValue({ date: previousDate, status: 'recovered' }),
+      increment: getIncrementValue('recovered'),
     },
     {
       label: 'Existing',
       value: getValue({ date, status: 'existing' }),
-      increment: getValue({ date, status: 'existing' }) - getValue({ date: previousDate, status: 'existing' }),
+      increment: getIncrementValue('existing'),
     },
   ]
 

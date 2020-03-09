@@ -70,6 +70,7 @@ class WorldMap extends Component {
 
   componentDidMount() {
     let chart = am4core.create("chartdiv", am4maps.MapChart);
+    this.chart = chart
 
     chart.projection = new am4maps.projections.Miller();
 
@@ -124,19 +125,25 @@ class WorldMap extends Component {
     // Set up click events
     worldPolygon.events.on("hit", ev => {
       let { name, country, map } = ev.target.dataItem.dataContext
+      ev.target.isHover = false;
+
       this.props.onClick(country)
 
       if (map && this.hasStateData(name)) {
         ev.target.series.chart.zoomToMapObject(ev.target);
-        // ev.target.isHover = false;
         countrySeries.geodataSource.url = "https://www.amcharts.com/lib/4/geodata/json/" + map + ".json";
         countrySeries.geodataSource.load();
-
-        let name = ev.target.dataItem.dataContext.name
-
         countrySeries.data = this.getStatesData(name, map)
       }
     });
+
+    this.resetMap = () => {
+      chart.series.values[0].show()
+      chart.series.values[1].hide()
+      chart.goHome()
+
+      this.props.onClick(null)
+    }
 
     // Set up data for countries
     worldSeries.data = this.getCountriesData()
@@ -177,13 +184,8 @@ class WorldMap extends Component {
     chart.zoomControl = new am4maps.ZoomControl();
 
     let homeButton = new am4core.Button();
-    homeButton.events.on("hit", () => {
-      worldSeries.show();
-      countrySeries.hide();
-      chart.goHome();
 
-      this.props.onClick()
-    });
+    homeButton.events.on("hit", this.resetMap);
 
     homeButton.icon = new am4core.Sprite();
     homeButton.padding(7, 5, 7, 5);
@@ -216,6 +218,8 @@ class WorldMap extends Component {
           this.chart.series.values[index].data = value
         }
       })
+
+      this.props.country || this.resetMap()
     }
 
     return (

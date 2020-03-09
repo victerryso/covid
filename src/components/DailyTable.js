@@ -188,7 +188,7 @@ const EnhancedTable = function (props) {
               {stableSort(rows, getSorting(order, orderBy)).map((row, index) => (
                 <TableRow
                   hover
-                  onClick={event => props.handleClick(row.country)}
+                  onClick={event => props.country === row.country ? props.handleClick(null) : props.handleClick(row.country)}
                   tabIndex={-1}
                   key={row.country}
                   selected={row.country === props.country}

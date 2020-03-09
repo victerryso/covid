@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import red from '@material-ui/core/colors/red';
 import 'typeface-roboto';
 
@@ -34,9 +36,15 @@ const useStyles = makeStyles(theme => ({
   paper: {
     width: '100%',
   },
-
   alignRight: {
     textAlign: 'right'
+  },
+  flex: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  button: {
+    marginLeft: theme.spacing(1)
   }
 }));
 
@@ -95,7 +103,17 @@ function App() {
 
             <Hidden xsDown>
               <Typography variant='h3'>
-                COVID-19
+                {country ? (
+                  <div className={classes.flex}>
+                    <span>{country}</span>
+                    <IconButton
+                      className={classes.button}
+                      onClick={() => setCountry(null)}
+                    >
+                      <CloseIcon fontSize='large' />
+                    </IconButton>
+                  </div>
+                ) : 'COVID-19'}
               </Typography>
             </Hidden>
 
@@ -120,6 +138,7 @@ function App() {
               <Statistics
                 mapData={mapData}
                 date={currentDate}
+                country={country}
               />
             </div>
           </Hidden>
