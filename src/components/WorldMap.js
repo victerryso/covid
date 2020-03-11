@@ -45,6 +45,10 @@ class WorldMap extends Component {
   }
 
   getStatesData(country, map) {
+    if (!this.hasStateData(country)) {
+      return
+    }
+
     return _.map(states[country], (id, state) => {
       let value = this.getValue({ state, country })
 
@@ -229,15 +233,17 @@ class WorldMap extends Component {
   render() {
     if (this.chart) {
       // If country is selected, zoom into a country else reset the map
-      if (this.props.country) {
-        this.selectCountry(this.props.country)
+      let country = this.props.country
+
+      if (country) {
+        this.selectCountry(country)
       } else {
         this.resetMap()
       }
 
       let values = [
         this.getCountriesData(),
-        this.props.country && this.getStatesData(this.props.country),
+        country && this.getStatesData(country),
         this.getOtherData(),
       ]
 

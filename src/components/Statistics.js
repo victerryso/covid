@@ -112,7 +112,7 @@ const Statistics = function (props) {
             </Typography>
 
             <Typography variant='body2' style={{ color: getColor(increment) }}>
-              {formatValue(increment)}
+              {formatValue(increment) || '\u00A0'}
             </Typography>
 
           </div>
