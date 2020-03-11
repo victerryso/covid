@@ -5,6 +5,7 @@ import moment from 'moment'
 import fixStateNames from '../data/fix-state-names'
 import getStateId from '../data/get-state-ids.json'
 import getCountryId from '../data/get-country-id'
+import flags from '../data/country-flags.json'
 
 const urls = [{
   title: 'confirmed',
@@ -30,12 +31,14 @@ const transformItem = ({ title, item }) => {
 
   let stateId = state && getStateId[country] && getStateId[country][state]
   let countryId = getCountryId(country)
+  let flag = flags[countryId] && flags[countryId].emoji
 
   return {
     state,
     country,
     stateId,
     countryId,
+    flag,
     latitude: item['Lat'],
     longitude: item['Long'],
     data: dates.map(date => ({

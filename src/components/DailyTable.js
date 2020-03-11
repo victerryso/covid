@@ -12,7 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
-import flags from '../data/country-flags.json'
 
 const desc = function (a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) return -1
@@ -140,13 +139,13 @@ const EnhancedTable = function (props) {
   };
 
   const rows = _.chain(props.mapData)
-    .map(({ country, countryId, data }) => {
+    .map(({ country, countryId, flag, data }) => {
       let pointA = data.find(({ date }) => date === props.date)
       let pointB = data.find(({ date }) => date === props.date - 86400000)
 
       return {
         country,
-        flag: flags[countryId] && flags[countryId].emoji,
+        flag,
         count: pointA[props.status],
         increment: pointA[props.status] - (pointB ? pointB[props.status] : 0),
       }

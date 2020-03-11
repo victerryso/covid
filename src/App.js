@@ -45,6 +45,9 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     marginLeft: theme.spacing(1)
+  },
+  marginRight: {
+    marginRight: theme.spacing(3),
   }
 }));
 
@@ -80,6 +83,12 @@ function App() {
       return data.find(({ date }) => date === dates[dates.length - 1])[status]
     }).reduce((memo, value) => memo + value, 0)
 
+    let getFlag = () => {
+      let item = mapData.find(item => item.country === country)
+
+      return item ? item.flag : ''
+    }
+
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -105,6 +114,7 @@ function App() {
               <Typography variant='h3'>
                 {country ? (
                   <div className={classes.flex}>
+                    <span className={classes.marginRight}>{getFlag()}</span>
                     <span>{country}</span>
                     <IconButton
                       className={classes.button}
