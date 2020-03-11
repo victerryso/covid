@@ -3,7 +3,6 @@ import _ from 'underscore'
 import moment from 'moment'
 
 import fixStateNames from '../data/fix-state-names'
-import fixCountryNames from '../data/fix-country-names.json'
 import getStateId from '../data/get-state-ids.json'
 import getCountryId from '../data/get-country-id'
 
@@ -23,12 +22,11 @@ const transformItem = ({ title, item }) => {
   let keys = ['Province/State', 'Country/Region', 'Lat', 'Long']
   let dates = Object.keys(item).filter(key => !keys.includes(key))
 
-  let state = fixStateNames({
+  let { state, country } = fixStateNames({
     state: item['Province/State'],
     country: item['Country/Region']
-  }) || item['Province/State']
+  })
 
-  let country = fixCountryNames[item['Country/Region']] || item['Country/Region']
 
   let stateId = state && getStateId[country] && getStateId[country][state]
   let countryId = getCountryId(country)

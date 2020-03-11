@@ -123,6 +123,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
   },
+  row: {
+    cursor: 'pointer',
+  }
 }));
 
 const EnhancedTable = function (props) {
@@ -192,6 +195,7 @@ const EnhancedTable = function (props) {
                   tabIndex={-1}
                   key={row.country}
                   selected={row.country === props.country}
+                  className={classes.row}
                 >
                   {headCells.map(({ id, numeric }, index) => (
                     <TableCell

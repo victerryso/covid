@@ -68,9 +68,40 @@ class WorldMap extends Component {
       .value()
   }
 
+  selectCountry(country) {
+    // Only a few countries have state data
+    if (!this.hasStateData(country)) {
+      // return
+      return this.resetMap()
+    }
+
+    let chart = this.chart
+    let series = chart.series.values[1]
+
+    let polygon = chart.series.values[0].mapPolygons.values.find(value => {
+      return value.dataItem && value.dataItem.dataContext && value.dataItem.dataContext.name === country
+    })
+
+    let map = polygon.dataItem.dataContext.map
+
+    chart.zoomToMapObject(polygon)
+
+    series.geodataSource.url = "https://www.amcharts.com/lib/4/geodata/json/" + map + ".json";
+    series.geodataSource.load();
+    series.data = this.getStatesData(country, map)
+  }
+
+  // Show world map and hide country map
+  resetMap() {
+    let chart = this.chart
+
+    chart.series.values[0].show()
+    chart.series.values[1].hide()
+    chart.goHome()
+  }
+
   componentDidMount() {
     let chart = am4core.create("chartdiv", am4maps.MapChart);
-    this.chart = chart
 
     chart.projection = new am4maps.projections.Miller();
 
@@ -88,11 +119,14 @@ class WorldMap extends Component {
       max: am4core.color(this.maxColor),
     });
 
+    worldSeries.data = this.getCountriesData()
+
     let worldPolygon = worldSeries.mapPolygons.template;
     worldPolygon.nonScalingStroke = true;
     worldPolygon.fill = am4core.color(this.nullColor);
     worldPolygon.propertyFields.fill = "color";
     worldPolygon.tooltipText = "{tooltip}";
+    worldPolygon.cursorOverStyle = am4core.MouseCursorStyle.pointer;
 
     // let hs = worldPolygon.states.create("hover");
     // hs.properties.fill = chart.colors.getIndex(9);
@@ -124,29 +158,14 @@ class WorldMap extends Component {
 
     // Set up click events
     worldPolygon.events.on("hit", ev => {
-      let { name, country, map } = ev.target.dataItem.dataContext
-      ev.target.isHover = false;
+      let { country, map } = ev.target.dataItem.dataContext
+
+      if (map) {
+        this.selectCountry(country)
+      }
 
       this.props.onClick(country)
-
-      if (map && this.hasStateData(name)) {
-        ev.target.series.chart.zoomToMapObject(ev.target);
-        countrySeries.geodataSource.url = "https://www.amcharts.com/lib/4/geodata/json/" + map + ".json";
-        countrySeries.geodataSource.load();
-        countrySeries.data = this.getStatesData(name, map)
-      }
     });
-
-    this.resetMap = () => {
-      chart.series.values[0].show()
-      chart.series.values[1].hide()
-      chart.goHome()
-
-      this.props.onClick(null)
-    }
-
-    // Set up data for countries
-    worldSeries.data = this.getCountriesData()
 
     let imageSeries = chart.series.push(new am4maps.MapImageSeries());
     imageSeries.mapImages.template.propertyFields.longitude = "longitude";
@@ -182,10 +201,11 @@ class WorldMap extends Component {
 
     // Zoom control
     chart.zoomControl = new am4maps.ZoomControl();
+    chart.zoomControl.cursorOverStyle = am4core.MouseCursorStyle.pointer;
 
     let homeButton = new am4core.Button();
 
-    homeButton.events.on("hit", this.resetMap);
+    homeButton.events.on("hit", () => this.resetMap());
 
     homeButton.icon = new am4core.Sprite();
     homeButton.padding(7, 5, 7, 5);
@@ -195,6 +215,7 @@ class WorldMap extends Component {
     homeButton.marginBottom = 10;
     homeButton.parent = chart.zoomControl;
     homeButton.insertBefore(chart.zoomControl.plusButton);
+    homeButton.cursorOverStyle = am4core.MouseCursorStyle.pointer;
 
     this.chart = chart;
   }
@@ -207,6 +228,13 @@ class WorldMap extends Component {
 
   render() {
     if (this.chart) {
+      // If country is selected, zoom into a country else reset the map
+      if (this.props.country) {
+        this.selectCountry(this.props.country)
+      } else {
+        this.resetMap()
+      }
+
       let values = [
         this.getCountriesData(),
         this.props.country && this.getStatesData(this.props.country),
@@ -218,8 +246,6 @@ class WorldMap extends Component {
           this.chart.series.values[index].data = value
         }
       })
-
-      this.props.country || this.resetMap()
     }
 
     return (

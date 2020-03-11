@@ -133,15 +133,13 @@ function App() {
 
           </div>
 
-          <Hidden xsDown>
-            <div className={classes.top}>
-              <Statistics
-                mapData={mapData}
-                date={currentDate}
-                country={country}
-              />
-            </div>
-          </Hidden>
+          <div className={classes.top}>
+            <Statistics
+              mapData={mapData}
+              date={currentDate}
+              country={country}
+            />
+          </div>
 
           <div className={classes.main}>
 

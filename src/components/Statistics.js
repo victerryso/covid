@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
 import Typography from '@material-ui/core/Typography'
+import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';
@@ -64,47 +65,58 @@ const Statistics = function (props) {
     {
       label: 'Countries',
       value: getCountryValue(date).toLocaleString(),
-      increment: getCountryValue(date) - getCountryValue(previousDate)
+      increment: getCountryValue(date) - getCountryValue(previousDate),
+      hideOnSmall: true,
     },
     {
       label: 'Confirmed',
       value: getValue({ date, status: 'confirmed' }),
       increment: getIncrementValue('confirmed'),
+      hideOnSmall: false,
+
     },
     {
       label: 'Deaths',
       value: getValue({ date, status: 'deaths' }),
       increment: getIncrementValue('deaths'),
+      hideOnSmall: false,
+
     },
     {
       label: 'Recovered',
       value: getValue({ date, status: 'recovered' }),
       increment: getIncrementValue('recovered'),
+      hideOnSmall: false,
+
     },
     {
       label: 'Existing',
       value: getValue({ date, status: 'existing' }),
       increment: getIncrementValue('existing'),
+      hideOnSmall: true,
+
     },
   ]
 
   return (
     <>
-      {stats.map(({ label, value, increment }, index) => (
-        <div className={classes.statistic} key={index}>
-          <Typography variant='h5'>
-            {value.toLocaleString()}
-          </Typography>
+      {stats.map(({ label, value, increment, hideOnSmall }, index) => (
+        <Hidden xsDown={hideOnSmall} key={index}>
+          <div className={classes.statistic}>
+            <Typography variant='h5'>
+              {value.toLocaleString()}
+            </Typography>
 
-          <Typography variant='button'>
-            {label}
-          </Typography>
+            <Typography variant='button'>
+              {label}
+            </Typography>
 
-          <Typography variant='body2' style={{ color: getColor(increment) }}>
-            {formatValue(increment)}
-          </Typography>
+            <Typography variant='body2' style={{ color: getColor(increment) }}>
+              {formatValue(increment)}
+            </Typography>
 
-        </div>
+          </div>
+        </Hidden>
       ))}
     </>
   )
