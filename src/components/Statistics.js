@@ -22,7 +22,7 @@ const Statistics = function (props) {
   const getValue = ({ date, status }) => {
     return _.chain(props.mapData)
       .filter(({ country }) => props.country ? country === props.country : true)
-      .reject(country => country === 'Others')
+      // .reject(country => country === 'Others')
       .pluck('data')
       .flatten()
       .where({ date })
@@ -42,7 +42,7 @@ const Statistics = function (props) {
 
     return _.chain(props.mapData)
       .filter(({ country }) => props.country ? country === props.country : true)
-      .reject(country => country === 'Others')
+      // .reject(country => country === 'Others')
       .filter(({ data }) => _.findWhere(data, { date }).confirmed)
       .pluck('country')
       .uniq()

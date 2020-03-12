@@ -35,7 +35,7 @@ class WorldMap extends Component {
         country,
         map: maps[0],
         value: value ? Math.log(value) + 1 : undefined,
-        tooltip: value ? `${country}: ${value}` : country,
+        tooltip: value ? `${country}: ${value.toLocaleString()}` : country,
       }
     })
   }
@@ -55,7 +55,7 @@ class WorldMap extends Component {
       return {
         id,
         value: value ? Math.log(value) + 1 : undefined,
-        tooltip: value ? `${state}: ${value}` : state,
+        tooltip: value ? `${state}: ${value.toLocaleString()}` : state,
       }
     })
   }

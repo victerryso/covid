@@ -52,10 +52,10 @@ let fixStateName = ({ state, country }) => {
     country = 'Others'
   }
 
-  // if (/From Diamond Princess/.test(state)) {
-  //   country = 'Others'
-  //   state = 'Diamond Princess cruise ship'
-  // }
+  if (/Diamond Princess/.test(state)) {
+    country = 'Others'
+    state = 'Diamond Princess'
+  }
 
   // Canadian state id
   if (country === 'Canada') {

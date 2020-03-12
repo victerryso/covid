@@ -39,11 +39,7 @@ const getColor = count => {
   if (count < 0) return red[500]
 }
 
-const getSign = count => {
-  if (count > 0) return '+'
-  if (count < 0) return '-'
-                 return ''
-}
+const getSign = count => count > 0 ? '+' : ''
 
 const headCells = [
   // { id: 'flag', numeric: false, label: 'Flag' },
@@ -151,7 +147,6 @@ const EnhancedTable = function (props) {
       }
     })
     .groupBy('country')
-    .tap(s=>console.log(s.China))
     .map((items, country) => ({
       country,
       flag: items[0].flag,
