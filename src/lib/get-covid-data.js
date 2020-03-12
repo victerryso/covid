@@ -65,7 +65,7 @@ const getCovidData = async () => {
   return _.chain(results)
     .map(({ title, data }) => data.map(item => transformItem({ title, item })))
     .flatten()
-    .reject(({ state }) => /\(From Diamond Princess\)/.test(state)) // Remove people from Diamond Princess with countries
+    // .reject(({ state }) => /\(From Diamond Princess\)/.test(state)) // Remove people from Diamond Princess with countries
     .groupBy(({ data, ...params }) => JSON.stringify(params))
     .map((items, location) => ({
       ...JSON.parse(location),
@@ -77,7 +77,7 @@ const getCovidData = async () => {
           date: +date,
           ...items.reduce((memo, { title, value }) => ({
             ...memo,
-            [title]: value,
+            [title]: value + (memo[title] || 0),
           }), {})
         }))
         .map(item => ({
