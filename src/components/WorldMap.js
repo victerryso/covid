@@ -209,7 +209,10 @@ class WorldMap extends Component {
 
     let homeButton = new am4core.Button();
 
-    homeButton.events.on("hit", () => this.resetMap());
+    homeButton.events.on("hit", () => {
+      this.resetMap()
+      this.props.onClick(null)
+    });
 
     homeButton.icon = new am4core.Sprite();
     homeButton.padding(7, 5, 7, 5);
