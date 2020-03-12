@@ -151,6 +151,7 @@ const EnhancedTable = function (props) {
       }
     })
     .groupBy('country')
+    .tap(s=>console.log(s.China))
     .map((items, country) => ({
       country,
       flag: items[0].flag,

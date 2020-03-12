@@ -34,7 +34,13 @@ const countries = {
   "Saint Martin": "Saint Martin (French Part)",
   "Palestine": "Palestinian, State of",
   "occupied Palestinian territory": "Palestinian, State of",
-  "Taipei and environs": "Taiwan, Province of China"
+  "Taipei and environs": "Taiwan, Province of China",
+  "Taiwan*": "Taiwan, Province of China",
+  "Korea, South": "Korea, Republic of",
+  "Cruise Ship": "Others",
+  "Czechia": "Czech Republic",
+  "Bolivia": "Bolivia, Plurinational State of",
+  "Congo (Kinshasa)": "Congo, the Democratic Republic of the"
 }
 
 let fixStateName = ({ state, country }) => {
