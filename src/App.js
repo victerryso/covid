@@ -148,6 +148,7 @@ function App() {
               mapData={mapData}
               date={currentDate}
               country={country}
+              status={status}
             />
           </div>
 

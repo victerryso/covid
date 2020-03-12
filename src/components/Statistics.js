@@ -52,8 +52,8 @@ const Statistics = function (props) {
 
   const formatValue = value => {
     if (value > 0) return `+${value.toLocaleString()}`
-    if (value < 0) return `-${value.toLocaleString()}`
-                   return ''
+    if (value < 0) return value.toLocaleString()
+                   return '\u00A0'
   }
 
   const getColor = value => {
@@ -72,28 +72,28 @@ const Statistics = function (props) {
       label: 'Confirmed',
       value: getValue({ date, status: 'confirmed' }),
       increment: getIncrementValue('confirmed'),
-      hideOnSmall: false,
+      hideOnSmall: props.status === 'confirmed',
 
     },
     {
       label: 'Deaths',
       value: getValue({ date, status: 'deaths' }),
       increment: getIncrementValue('deaths'),
-      hideOnSmall: false,
+      hideOnSmall: props.status === 'deaths',
 
     },
     {
       label: 'Recovered',
       value: getValue({ date, status: 'recovered' }),
       increment: getIncrementValue('recovered'),
-      hideOnSmall: false,
+      hideOnSmall: props.status === 'recovered',
 
     },
     {
       label: 'Existing',
       value: getValue({ date, status: 'existing' }),
       increment: getIncrementValue('existing'),
-      hideOnSmall: true,
+      hideOnSmall: props.status === 'existing',
 
     },
   ]
@@ -112,7 +112,7 @@ const Statistics = function (props) {
             </Typography>
 
             <Typography variant='body2' style={{ color: getColor(increment) }}>
-              {formatValue(increment) || '\u00A0'}
+              {formatValue(increment)}
             </Typography>
 
           </div>
