@@ -21,6 +21,7 @@ import StatusSelect from './components/StatusSelect'
 import DailyTable from './components/DailyTable'
 import TimelineChart from './components/TimelineChart'
 import Statistics from './components/Statistics'
+import CountryChips from './components/CountryChips'
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -161,6 +162,11 @@ function App() {
               country={country}
               onClick={setCountry}
               max={max}
+            />
+
+            <CountryChips
+              country={country}
+              handleClick={setCountry}
             />
 
             <Timeline

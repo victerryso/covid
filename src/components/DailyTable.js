@@ -200,7 +200,7 @@ const EnhancedTable = function (props) {
                     >
                       {id === 'country' ? countryCell(row) : ''}
                       {id === 'increment' ? getSign(row[id]) : ''}
-                      {numeric ? row[id] : ''}
+                      {numeric ? row[id].toLocaleString() : ''}
                     </TableCell>
                   ))}
                 </TableRow>
