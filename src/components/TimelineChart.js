@@ -79,7 +79,10 @@ class TimelineChart extends Component {
     // Create axes
     let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 
-    chart.yAxes.push(new am4charts.ValueAxis());
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    valueAxis.numberFormatter = new am4core.NumberFormatter();
+    valueAxis.numberFormatter.numberFormat = "#a";
 
     // Create worldwide line series
     let lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -90,11 +93,11 @@ class TimelineChart extends Component {
     lineSeries.stroke = am4core.color(this.primaryColor);
     lineSeries.strokeWidth = 3;
 
-    let bullet = lineSeries.bullets.push(new am4charts.Bullet());
-    bullet.fill = am4core.color(this.primaryColor); // tooltips grab fill from parent by default
+    // let bullet = lineSeries.bullets.push(new am4charts.Bullet());
+    // bullet.fill = am4core.color(this.primaryColor); // tooltips grab fill from parent by default
 
-    let circle = bullet.createChild(am4core.Circle);
-    circle.radius = 4;
+    // let circle = bullet.createChild(am4core.Circle);
+    // circle.radius = 4;
 
     lineSeries.data = this.getLineData()
 
@@ -113,6 +116,10 @@ class TimelineChart extends Component {
     countryAxis.renderer.opposite = true;
     countryAxis.cursorTooltipEnabled = false;
 
+    // Use 000s suffix
+    countryAxis.numberFormatter = new am4core.NumberFormatter();
+    countryAxis.numberFormatter.numberFormat = "#a";
+
     var countrySeries = chart.series.push(new am4charts.LineSeries())
     countrySeries.dataFields.valueY = "countryValue";
     countrySeries.dataFields.dateX = "date";
@@ -123,11 +130,11 @@ class TimelineChart extends Component {
     countrySeries.stroke = am4core.color(this.secondaryColor);
     countrySeries.strokeWidth = 3;
 
-    let countryBullet = countrySeries.bullets.push(new am4charts.Bullet());
-    countryBullet.fill = am4core.color(this.secondaryColor); // tooltips grab fill from parent by default
+    // let countryBullet = countrySeries.bullets.push(new am4charts.Bullet());
+    // countryBullet.fill = am4core.color(this.secondaryColor); // tooltips grab fill from parent by default
 
-    let countryCircle = countryBullet.createChild(am4core.Circle);
-    countryCircle.radius = 4;
+    // let countryCircle = countryBullet.createChild(am4core.Circle);
+    // countryCircle.radius = 4;
 
     countrySeries.data = this.getCountryData()
 

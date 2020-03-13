@@ -72,28 +72,28 @@ const Statistics = function (props) {
       label: 'Confirmed',
       value: getValue({ date, status: 'confirmed' }),
       increment: getIncrementValue('confirmed'),
-      hideOnSmall: props.status === 'confirmed',
+      hideOnSmall: false,
 
     },
     {
       label: 'Deaths',
       value: getValue({ date, status: 'deaths' }),
       increment: getIncrementValue('deaths'),
-      hideOnSmall: props.status === 'deaths',
+      hideOnSmall: false,
 
     },
     {
       label: 'Recovered',
       value: getValue({ date, status: 'recovered' }),
       increment: getIncrementValue('recovered'),
-      hideOnSmall: props.status === 'recovered',
+      hideOnSmall: false,
 
     },
     {
       label: 'Existing',
       value: getValue({ date, status: 'existing' }),
       increment: getIncrementValue('existing'),
-      hideOnSmall: props.status === 'existing',
+      hideOnSmall: true,
 
     },
   ]
