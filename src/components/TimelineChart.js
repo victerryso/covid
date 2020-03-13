@@ -4,6 +4,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_dark from "@amcharts/amcharts4/themes/dark";
+import Paper from '@material-ui/core/Paper';
 import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';
 import yellow from '@material-ui/core/colors/yellow';
@@ -91,7 +92,7 @@ class TimelineChart extends Component {
     lineSeries.tooltipText = "Worldwide: {value}"
     lineSeries.fill = am4core.color(this.primaryColor);
     lineSeries.stroke = am4core.color(this.primaryColor);
-    lineSeries.strokeWidth = 3;
+    lineSeries.strokeWidth = 5;
 
     // let bullet = lineSeries.bullets.push(new am4charts.Bullet());
     // bullet.fill = am4core.color(this.primaryColor); // tooltips grab fill from parent by default
@@ -128,7 +129,7 @@ class TimelineChart extends Component {
     countrySeries.tooltipText = "{country}: {countryValue}"
     countrySeries.fill = am4core.color(this.secondaryColor);
     countrySeries.stroke = am4core.color(this.secondaryColor);
-    countrySeries.strokeWidth = 3;
+    countrySeries.strokeWidth = 5;
 
     // let countryBullet = countrySeries.bullets.push(new am4charts.Bullet());
     // countryBullet.fill = am4core.color(this.secondaryColor); // tooltips grab fill from parent by default
@@ -159,7 +160,9 @@ class TimelineChart extends Component {
     }
 
     return (
-      <div id="timeline-chart" style={{ width: "100%", height: '100%', minHeight: 360 }} />
+      <Paper style={{ height: '100%', padding: 8 }}>
+        <div id="timeline-chart" style={{ width: "100%", height: '100%', minHeight: 360 }} />
+      </Paper>
     );
   }
 }

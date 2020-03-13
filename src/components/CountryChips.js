@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
-import stateIds from '../data/get-state-ids.json'
 import countryFlags from '../data/country-flags.json'
 
 const useStyles = makeStyles(theme => ({
@@ -16,7 +15,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const countries = Object.keys(stateIds)
+const countries = [
+  {
+    label: 'Australia',
+    value: 'Australia',
+  },
+  {
+    label: 'Canada',
+    value: 'Canada',
+  },
+  {
+    label: 'China',
+    value: 'China',
+  },
+  {
+    label: 'United States',
+    value: 'United States',
+  },
+]
+
 const flags = Object.values(countryFlags)
 
 const getFlag = country => {
@@ -37,14 +54,14 @@ const CountryChips = function (props) {
         onClick={() => props.handleClick(null)}
       />
 
-      {countries.map((country, index) => (
+      {countries.map(({ label, value }, index) => (
         <Chip
           clickable
-          avatar={<Avatar>{getFlag(country)}</Avatar>}
-          label={country}
-          onClick={() => props.handleClick(country)}
+          avatar={<Avatar>{getFlag(label)}</Avatar>}
+          label={label}
+          onClick={() => props.handleClick(value)}
           key={index}
-          color={country === props.country ? 'primary' : 'default'}
+          color={label === props.country ? 'primary' : 'default'}
         />
       ))}
     </div>
