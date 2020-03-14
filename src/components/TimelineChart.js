@@ -16,9 +16,6 @@ am4core.useTheme(am4themes_dark);
 am4core.useTheme(am4themes_animated);
 // Themes end
 
-// Themes begin
-am4core.useTheme(am4themes_animated);
-
 class TimelineChart extends Component {
   primaryColor = red[500]
   secondaryColor = yellow[100]
