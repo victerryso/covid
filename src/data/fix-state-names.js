@@ -40,7 +40,10 @@ const countries = {
   "Cruise Ship": "Others",
   "Czechia": "Czech Republic",
   "Bolivia": "Bolivia, Plurinational State of",
-  "Congo (Kinshasa)": "Congo, the Democratic Republic of the"
+  "Congo (Kinshasa)": "Congo, the Democratic Republic of the",
+  "Congo (Brazzaville)": "Congo",
+  "Eswatini": "Swaziland",
+  "Venezuela": "Venezuela, Bolivarian Republic of",
 }
 
 let fixStateName = ({ state, country }) => {
