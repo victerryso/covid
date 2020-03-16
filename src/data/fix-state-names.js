@@ -32,6 +32,7 @@ const countries = {
   "Holy See": "Holy See (Vatican City State)",
   "St. Martin": "Saint Martin (French Part)",
   "Saint Martin": "Saint Martin (French Part)",
+  "St Martin": "Saint Martin (French Part)",
   "Palestine": "Palestinian, State of",
   "occupied Palestinian territory": "Palestinian, State of",
   "Taipei and environs": "Taiwan, Province of China",
@@ -46,7 +47,24 @@ const countries = {
   "Venezuela": "Venezuela, Bolivarian Republic of",
 }
 
+const stateToCountry = [
+  'Faroe Islands',
+  'St Martin',
+  'Channel Islands',
+  'Saint Barthelemy',
+  'Gibraltar',
+  'French Polynesia',
+  'French Guiana',
+  'Mayotte',
+]
+
 let fixStateName = ({ state, country }) => {
+  // Change specific places owned by countries into countries
+  if (stateToCountry.includes(state)) {
+    country = `${state}`
+    state = ''
+  }
+
   country = countries[country] || country
   state = states[state] || state
 
@@ -55,6 +73,7 @@ let fixStateName = ({ state, country }) => {
     country = 'Others'
   }
 
+  // Change ship to location
   if (/Diamond Princess/.test(state)) {
     country = 'Others'
     state = 'Diamond Princess'
