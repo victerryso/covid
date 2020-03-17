@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
-import countryFlags from '../data/country-flags.json'
+import flags from '../data/country-flags.json'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,29 +18,23 @@ const useStyles = makeStyles(theme => ({
 const countries = [
   {
     label: 'Australia',
-    value: 'Australia',
+    value: 'AU',
   },
   {
     label: 'Canada',
-    value: 'Canada',
+    value: 'CA',
   },
   {
     label: 'China',
-    value: 'China',
+    value: 'CN',
   },
   {
     label: 'United States',
-    value: 'United States',
+    value: 'US',
   },
 ]
 
-const flags = Object.values(countryFlags)
-
-const getFlag = country => {
-  let flag = flags.find(({ name }) => name === country)
-
-  return flag ? flag.emoji : undefined
-}
+const getFlag = country => flags[country] && flags[country].emoji
 
 const CountryChips = function (props) {
   const classes = useStyles();
@@ -51,17 +45,17 @@ const CountryChips = function (props) {
         clickable
         label="Reset"
         disabled={!props.country}
-        onClick={() => props.handleClick(null)}
+        onClick={() => props.handleClick()}
       />
 
       {countries.map(({ label, value }, index) => (
         <Chip
           clickable
-          avatar={<Avatar>{getFlag(label)}</Avatar>}
+          avatar={<Avatar>{getFlag(value)}</Avatar>}
           label={label}
           onClick={() => props.handleClick(value)}
           key={index}
-          color={label === props.country ? 'primary' : 'default'}
+          color={value === props.country ? 'primary' : 'default'}
         />
       ))}
     </div>

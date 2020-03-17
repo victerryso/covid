@@ -21,7 +21,7 @@ const Statistics = function (props) {
 
   const getValue = ({ date, status }) => {
     return _.chain(props.mapData)
-      .filter(({ country }) => props.country ? country === props.country : true)
+      .filter(({ countryId }) => props.country ? countryId === props.country : true)
       // .reject(country => country === 'Others')
       .pluck('data')
       .flatten()
@@ -41,7 +41,7 @@ const Statistics = function (props) {
     }
 
     return _.chain(props.mapData)
-      .filter(({ country }) => props.country ? country === props.country : true)
+      .filter(({ countryId }) => props.country ? countryId === props.country : true)
       // .reject(country => country === 'Others')
       .filter(item => {
         let data = _.findWhere(item.data, { date })

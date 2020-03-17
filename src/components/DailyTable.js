@@ -141,15 +141,15 @@ const EnhancedTable = function (props) {
 
       return {
         country,
+        countryId,
         flag,
         count: pointA[props.status],
         increment: pointA[props.status] - (pointB ? pointB[props.status] : 0),
       }
     })
-    .groupBy('country')
-    .map((items, country) => ({
-      country,
-      flag: items[0].flag,
+    .groupBy(({ countryId, country, flag }) => JSON.stringify({ flag, country, countryId }))
+    .map((items, params) => ({
+      ...JSON.parse(params),
       total: items.reduce((memo, { count }) => memo + count, 0),
       increment: items.reduce((memo, { increment }) => memo + increment, 0),
     }))
@@ -186,10 +186,10 @@ const EnhancedTable = function (props) {
               {stableSort(rows, getSorting(order, orderBy)).map((row, index) => (
                 <TableRow
                   hover
-                  onClick={event => props.country === row.country ? props.handleClick(null) : props.handleClick(row.country)}
+                  onClick={event => props.country === row.countryId ? props.handleClick() : props.handleClick(row.countryId)}
                   tabIndex={-1}
                   key={row.country}
-                  selected={row.country === props.country}
+                  selected={row.countryId === props.country}
                   className={classes.row}
                 >
                   {headCells.map(({ id, numeric }, index) => (

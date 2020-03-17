@@ -22,6 +22,7 @@ import DailyTable from './components/DailyTable'
 import TimelineChart from './components/TimelineChart'
 import Statistics from './components/Statistics'
 import CountryChips from './components/CountryChips'
+import flags from './data/country-flags.json'
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -84,10 +85,14 @@ function App() {
       return data.find(({ date }) => date === dates[dates.length - 1])[status]
     }).reduce((memo, value) => memo + value, 0)
 
-    let getFlag = () => {
-      let item = mapData.find(item => item.country === country)
+    let getCountryName = country => {
+      let item = mapData.find(({ countryId }) => country === countryId)
 
-      return item ? item.flag : ''
+      return item ? item.country : undefined
+    }
+
+    let getFlag = country => {
+      return flags[country] ? flags[country].emoji : undefined
     }
 
     return (
@@ -115,8 +120,8 @@ function App() {
               <Typography variant='h3'>
                 {country ? (
                   <div className={classes.flex}>
-                    <span className={classes.marginRight}>{getFlag()}</span>
-                    <span>{country}</span>
+                    <span className={classes.marginRight}>{getFlag(country)}</span>
+                    <span>{getCountryName(country)}</span>
                     <IconButton
                       className={classes.button}
                       onClick={() => setCountry(null)}
@@ -160,7 +165,7 @@ function App() {
               date={currentDate}
               status={status}
               country={country}
-              onClick={setCountry}
+              handleClick={setCountry}
               max={max}
             />
 
@@ -176,7 +181,7 @@ function App() {
               value={currentDate}
               handleChange={setDate}
             />
-
+{
             <Grid container spacing={1}>
 
               <Grid item sm className={classes.paper}>
@@ -200,7 +205,7 @@ function App() {
               </Grid>
 
             </Grid>
-
+}
           </div>
 
         </Container>

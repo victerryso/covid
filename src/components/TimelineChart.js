@@ -52,7 +52,7 @@ class TimelineChart extends Component {
     let country = this.props.country
 
     return _.chain(this.props.mapData)
-      .where({ country })
+      .where({ countryId: country })
       .pluck('data')
       .flatten()
       .groupBy('date')
