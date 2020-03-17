@@ -70,6 +70,13 @@ class TimelineChart extends Component {
     }
   }
 
+  getDateLine() {
+    let { date, dates } = this.props
+    let index = dates.indexOf(date)
+
+    return `${(index + 0.5) * 100 / dates.length}%`
+  }
+
   componentDidMount() {
     // Create chart instance
     let chart = am4core.create("timeline-chart", am4charts.XYChart);
@@ -140,6 +147,18 @@ class TimelineChart extends Component {
     chart.cursor = new am4charts.XYCursor();
     chart.cursor.xAxis = dateAxis;
 
+    // Add Date Line
+    this.middleLine = chart.plotContainer.createChild(am4core.Line);
+    this.middleLine.strokeOpacity = 0.25;
+    this.middleLine.stroke = am4core.color("#fff");
+    this.middleLine.strokeWidth = 3;
+    this.middleLine.strokeDasharray = "5";
+    this.middleLine.x = this.getDateLine()
+    this.middleLine.zIndex = 1;
+    this.middleLine.adapter.add("y2", function (y2, target) {
+      return target.parent.pixelHeight;
+    })
+
     this.chart = chart;
   }
 
@@ -154,6 +173,10 @@ class TimelineChart extends Component {
       this.applyData(0, this.getLineData())
       this.applyData(1, this.getColumnData())
       this.applyData(2, this.getCountryData())
+    }
+
+    if (this.middleLine) {
+      this.middleLine.x = this.getDateLine()
     }
 
     return (
