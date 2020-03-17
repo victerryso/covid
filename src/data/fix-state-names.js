@@ -45,6 +45,9 @@ const countries = {
   "Congo (Brazzaville)": "Congo",
   "Eswatini": "Swaziland",
   "Venezuela": "Venezuela, Bolivarian Republic of",
+  "The Bahamas": "Bahamas",
+  "Tanzania": "Tanzania, United Republic of",
+  "Republic of the Congo": "Congo",
 }
 
 const stateToCountry = [
