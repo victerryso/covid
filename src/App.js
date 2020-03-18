@@ -160,7 +160,7 @@ function App() {
               date={currentDate}
               status={status}
               country={country}
-              onClick={setCountry}
+              handleClick={setCountry}
               max={max}
             />
 

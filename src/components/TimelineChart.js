@@ -34,14 +34,25 @@ class TimelineChart extends Component {
   }
 
   getColumnData() {
-    return this.props.dates.map(date => ({
+    let { dates, mapData, status, country } = this.props
+
+    if (this.chart) {
+      let series = this.chart.series.values[1]
+      series.yAxis = country ? this.countryAxis : this.valueAxis
+
+      series.tooltipText = `${country ? country : 'Worldwide'} Increment: {value}`
+
+    }
+
+    return dates.map(date => ({
       date: new Date(+date),
-      value: _.chain(this.props.mapData)
+      value: _.chain(mapData)
+        .filter(item => country ? item.country === country : true)
         .map(({ country, countryId, data }) => {
           let pointA = data.find(item => item.date === date)
           let pointB = data.find(item => item.date === date - 86400000)
 
-          return pointA[this.props.status] - (pointB ? pointB[this.props.status] : 0)
+          return pointA[status] - (pointB ? pointB[status] : 0)
         })
         .reduce((memo, increment) => memo + increment, 0)
         .value()
@@ -88,6 +99,7 @@ class TimelineChart extends Component {
 
     valueAxis.numberFormatter = new am4core.NumberFormatter();
     valueAxis.numberFormatter.numberFormat = "#a";
+    valueAxis.min = 0
 
     // Create worldwide line series
     let lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -120,6 +132,7 @@ class TimelineChart extends Component {
     let countryAxis = chart.yAxes.push(new am4charts.ValueAxis());
     countryAxis.renderer.opposite = true;
     countryAxis.cursorTooltipEnabled = false;
+    countryAxis.min = 0
 
     // Use 000s suffix
     countryAxis.numberFormatter = new am4core.NumberFormatter();
@@ -160,6 +173,8 @@ class TimelineChart extends Component {
     })
 
     this.chart = chart;
+    this.countryAxis = countryAxis
+    this.valueAxis = valueAxis
   }
 
   componentWillUnmount() {

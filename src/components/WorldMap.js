@@ -3,6 +3,8 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+import IconButton from '@material-ui/core/IconButton'
+import Close from '@material-ui/icons/Close'
 import red from '@material-ui/core/colors/red';
 import yellow from '@material-ui/core/colors/yellow';
 import grey from '@material-ui/core/colors/grey';
@@ -168,7 +170,7 @@ class WorldMap extends Component {
         this.selectCountry(country)
       }
 
-      this.props.onClick(country)
+      this.props.handleClick(country)
     });
 
     let imageSeries = chart.series.push(new am4maps.MapImageSeries());
@@ -211,7 +213,7 @@ class WorldMap extends Component {
 
     homeButton.events.on("hit", () => {
       this.resetMap()
-      this.props.onClick(null)
+      this.props.handleClick()
     });
 
     homeButton.icon = new am4core.Sprite();
@@ -234,10 +236,10 @@ class WorldMap extends Component {
   }
 
   render() {
+    let country = this.props.country
+
     if (this.chart) {
       // If country is selected, zoom into a country else reset the map
-      let country = this.props.country
-
       if (country) {
         this.selectCountry(country)
       } else {
@@ -262,6 +264,13 @@ class WorldMap extends Component {
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
           <div id="chartdiv" style={{ width: "100%", height: '100%' }}></div>
         </div>
+
+        {country ? <IconButton
+          onClick={() => this.props.handleClick()}
+          style={{ position: 'absolute', top: 0, right: 0 }}
+        >
+          <Close fontSize="large" />
+        </IconButton> : ''}
       </div>
     );
   }
