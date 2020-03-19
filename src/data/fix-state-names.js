@@ -48,7 +48,8 @@ const countries = {
   "The Bahamas": "Bahamas",
   "Tanzania": "Tanzania, United Republic of",
   "Republic of the Congo": "Congo",
-  "The Gambia": "Gambia"
+  "The Gambia": "Gambia",
+  "Gambia, The": "Gambia",
 }
 
 const stateToCountry = [
