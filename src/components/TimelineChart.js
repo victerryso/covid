@@ -38,7 +38,7 @@ class TimelineChart extends Component {
 
     if (this.chart) {
       let series = this.chart.series.values[1]
-      let name = state && country && 'Worldwide'
+      let name = state || country || 'Worldwide'
 
       series.yAxis = country ? this.countryAxis : this.valueAxis
       series.tooltipText = `${name} Increment: {value}`
