@@ -10,6 +10,8 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton'
+import Close from '@material-ui/icons/Close'
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
 import states from '../data/get-state-ids.json'
@@ -44,7 +46,7 @@ const getSign = count => count > 0 ? '+' : ''
 
 const headCells = [
   // { id: 'flag', numeric: false, label: 'Flag' },
-  { id: 'country', numeric: false, label: 'Country' },
+  { id: 'name', numeric: false, label: 'Country' },
   { id: 'increment', numeric: true, label: 'Change' },
   { id: 'total', numeric: true, label: 'Total' },
 ];
@@ -94,8 +96,16 @@ const EnhancedTableToolbar = props => {
   return (
     <Toolbar>
       <Typography className={classes.title} variant="h6">
-        Daily Increments
+        {hasStates(props.country) ? props.country : 'Daily Increments'}
+
+        {hasStates(props.country) ? (
+          <IconButton onClick={() => props.handleClick()}>
+            <Close size="small" />
+          </IconButton>
+        ) : ''}
       </Typography>
+
+
 
       <Typography variant="h6" style={{ color: getColor(props.count) }}>
         {getSign(props.count)}{props.count.toLocaleString()}
@@ -154,13 +164,13 @@ const EnhancedTable = function (props) {
       }
     })
     .groupBy(hasStates(props.country) ? 'state' : 'country')
-    .map((items, country) => ({
-      country,
+    .map((items, name) => ({
+      name,
       flag: items[0].flag,
       total: items.reduce((memo, { count }) => memo + count, 0),
       increment: items.reduce((memo, { increment }) => memo + increment, 0),
     }))
-    .sortBy('country')
+    .sortBy('name')
     .sortBy(({ total }) => -total)
     .sortBy(({ increment }) => -increment)
     .value()
@@ -170,14 +180,32 @@ const EnhancedTable = function (props) {
   const countryCell = row => (
     <div className={classes.countryCell}>
       <div className={classes.flag}>{row.flag}</div>
-      <div>{row.country}</div>
+      <div>{row.name}</div>
     </div>
   )
+
+  const handleClick = ({ name }) => {
+    let rowHasStates = hasStates(props.country)
+
+    if (rowHasStates && props.state === name) {
+      props.handleClick({ state: undefined })
+    } else if (rowHasStates) {
+      props.handleClick({ state: name })
+    } else if (props.country === name) {
+      props.handleClick({ country: undefined })
+    } else {
+      props.handleClick({ country: name })
+    }
+  }
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <EnhancedTableToolbar count={count} />
+        <EnhancedTableToolbar
+          count={count}
+          country={props.country}
+          handleClick={props.handleClick}
+        />
 
         <div className={classes.tableWrapper}>
           <Table
@@ -193,10 +221,10 @@ const EnhancedTable = function (props) {
               {stableSort(rows, getSorting(order, orderBy)).map((row, index) => (
                 <TableRow
                   hover
-                  onClick={event => props.country === row.country || hasStates(props.country) ? props.handleClick() : props.handleClick(row.country)}
+                  onClick={() => handleClick(row)}
                   tabIndex={-1}
-                  key={row.country}
-                  selected={row.country === props.country}
+                  key={row.name}
+                  selected={row.name === (hasStates(props.country) ? props.state : props.country)}
                   className={classes.row}
                 >
                   {headCells.map(({ id, numeric }, index) => (
@@ -205,7 +233,7 @@ const EnhancedTable = function (props) {
                       style={{ color: id === 'increment' && getColor(row[id]) }}
                       key={index}
                     >
-                      {id === 'country' ? countryCell(row) : ''}
+                      {id === 'name' ? countryCell(row) : ''}
                       {id === 'increment' ? getSign(row[id]) : ''}
                       {numeric ? row[id].toLocaleString() : ''}
                     </TableCell>

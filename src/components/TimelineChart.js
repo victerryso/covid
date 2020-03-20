@@ -34,20 +34,24 @@ class TimelineChart extends Component {
   }
 
   getColumnData() {
-    let { dates, mapData, status, country } = this.props
+    let { dates, mapData, status, country, state } = this.props
 
     if (this.chart) {
       let series = this.chart.series.values[1]
+      let name = state && country && 'Worldwide'
+
       series.yAxis = country ? this.countryAxis : this.valueAxis
-
-      series.tooltipText = `${country ? country : 'Worldwide'} Increment: {value}`
-
+      series.tooltipText = `${name} Increment: {value}`
     }
 
     return dates.map(date => ({
       date: new Date(+date),
       value: _.chain(mapData)
-        .filter(item => country ? item.country === country : true)
+        .filter(item => {
+          if (state)   return item.country === country && item.state === state
+          if (country) return item.country === country
+                       return true
+        })
         .map(({ country, countryId, data }) => {
           let pointA = data.find(item => item.date === date)
           let pointB = data.find(item => item.date === date - 86400000)
@@ -60,17 +64,19 @@ class TimelineChart extends Component {
   }
 
   getCountryData() {
-    let country = this.props.country
+    let { country, state, mapData, status } = this.props
+    let params = state ? { country, state } : { country }
 
-    return _.chain(this.props.mapData)
-      .where({ country })
+    return _.chain(mapData)
+      .where(params)
+      .filter()
       .pluck('data')
       .flatten()
       .groupBy('date')
       .map((items, date) => ({
-        country,
+        name: state || country,
         date: new Date(+date),
-        countryValue: items.reduce((memo, item) => memo + item[this.props.status], 0)
+        value: items.reduce((memo, item) => memo + item[status], 0)
       }))
       .value()
   }
@@ -139,11 +145,11 @@ class TimelineChart extends Component {
     countryAxis.numberFormatter.numberFormat = "#a";
 
     var countrySeries = chart.series.push(new am4charts.LineSeries())
-    countrySeries.dataFields.valueY = "countryValue";
+    countrySeries.dataFields.valueY = "value";
     countrySeries.dataFields.dateX = "date";
     countrySeries.yAxis = countryAxis;
 
-    countrySeries.tooltipText = "{country}: {countryValue}"
+    countrySeries.tooltipText = "{name}: {value}"
     countrySeries.fill = am4core.color(this.secondaryColor);
     countrySeries.stroke = am4core.color(this.secondaryColor);
     countrySeries.strokeWidth = 5;

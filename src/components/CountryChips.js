@@ -51,7 +51,7 @@ const CountryChips = function (props) {
         clickable
         label="Reset"
         disabled={!props.country}
-        onClick={() => props.handleClick(null)}
+        onClick={() => props.handleClick()}
       />
 
       {countries.map(({ label, value }, index) => (
@@ -59,7 +59,7 @@ const CountryChips = function (props) {
           clickable
           avatar={<Avatar>{getFlag(label)}</Avatar>}
           label={label}
-          onClick={() => props.handleClick(value)}
+          onClick={() => props.handleClick({ country: value })}
           key={index}
           color={label === props.country ? 'primary' : 'default'}
         />

@@ -66,6 +66,21 @@ function App() {
   const [date, setDate] = useState();
   const [status, setStatus] = useState('confirmed');
   const [country, setCountry] = useState();
+  const [state, setState] = useState();
+
+  const handleClick = value => {
+    if (!value) {
+      setCountry()
+      setState()
+
+      return
+    }
+
+    let keys = Object.keys(value)
+
+    keys.includes('country') && setCountry(value.country)
+    keys.includes('state')   && setState(value.state)
+  }
 
   useEffect(() => {
     getCovidData().then(setMapData)
@@ -119,7 +134,7 @@ function App() {
                     <span>{country}</span>
                     <IconButton
                       className={classes.button}
-                      onClick={() => setCountry(null)}
+                      onClick={() => handleClick()}
                     >
                       <CloseIcon fontSize='large' />
                     </IconButton>
@@ -160,13 +175,13 @@ function App() {
               date={currentDate}
               status={status}
               country={country}
-              handleClick={setCountry}
+              handleClick={handleClick}
               max={max}
             />
 
             <CountryChips
               country={country}
-              handleClick={setCountry}
+              handleClick={handleClick}
             />
 
             <Timeline
@@ -185,7 +200,8 @@ function App() {
                   date={currentDate}
                   status={status}
                   country={country}
-                  handleClick={setCountry}
+                  state={state}
+                  handleClick={handleClick}
                 />
               </Grid>
 
@@ -196,6 +212,7 @@ function App() {
                   status={status}
                   country={country}
                   dates={dates}
+                  state={state}
                 />
               </Grid>
 

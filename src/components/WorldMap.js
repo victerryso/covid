@@ -177,7 +177,13 @@ class WorldMap extends Component {
         this.selectCountry(country)
       }
 
-      this.props.handleClick(country)
+      this.props.handleClick({ country })
+    });
+
+    countryPolygon.events.on("hit", ev => {
+      let state = ev.target.dataItem.dataContext.name
+
+      this.props.handleClick({ state })
     });
 
     let imageSeries = chart.series.push(new am4maps.MapImageSeries());
