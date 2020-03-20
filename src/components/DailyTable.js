@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
+import states from '../data/get-state-ids.json'
 
 const desc = function (a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) return -1
@@ -47,6 +48,10 @@ const headCells = [
   { id: 'increment', numeric: true, label: 'Change' },
   { id: 'total', numeric: true, label: 'Total' },
 ];
+
+const hasStates = country => {
+  return Object.keys(states).includes(country)
+}
 
 const EnhancedTableHead = function (props) {
   const { order, orderBy, onRequestSort } = props;
@@ -135,18 +140,20 @@ const EnhancedTable = function (props) {
   };
 
   const rows = _.chain(props.mapData)
-    .map(({ country, countryId, flag, data }) => {
+    .filter(item => props.country && hasStates(props.country) ? item.country === props.country : true)
+    .map(({ country, countryId, flag, data, state }) => {
       let pointA = data.find(({ date }) => date === props.date)
       let pointB = data.find(({ date }) => date === props.date - 86400000)
 
       return {
         country,
+        state,
         flag,
         count: pointA[props.status],
         increment: pointA[props.status] - (pointB ? pointB[props.status] : 0),
       }
     })
-    .groupBy('country')
+    .groupBy(hasStates(props.country) ? 'state' : 'country')
     .map((items, country) => ({
       country,
       flag: items[0].flag,
@@ -186,7 +193,7 @@ const EnhancedTable = function (props) {
               {stableSort(rows, getSorting(order, orderBy)).map((row, index) => (
                 <TableRow
                   hover
-                  onClick={event => props.country === row.country ? props.handleClick(null) : props.handleClick(row.country)}
+                  onClick={event => props.country === row.country || hasStates(props.country) ? props.handleClick() : props.handleClick(row.country)}
                   tabIndex={-1}
                   key={row.country}
                   selected={row.country === props.country}

@@ -106,6 +106,13 @@ class WorldMap extends Component {
     chart.goHome()
   }
 
+  changeMaxValue() {
+    let series = this.chart.series.values[0]
+    let rules = series.heatRules.values[0]
+
+    rules.maxValue = Math.log(this.props.max)
+  }
+
   componentDidMount() {
     let chart = am4core.create("chartdiv", am4maps.MapChart);
 
@@ -257,6 +264,8 @@ class WorldMap extends Component {
           this.chart.series.values[index].data = value
         }
       })
+
+      this.changeMaxValue()
     }
 
     return (
