@@ -22,13 +22,23 @@ class TimelineChart extends Component {
   background = '#303030'
 
   getLineData() {
-    return _.chain(this.props.mapData)
+    let { country, state, mapData, status } = this.props
+
+    if (this.chart) {
+      let series = this.chart.series.values[0]
+      let name = state ? country : 'Worldwide'
+
+      series.tooltipText = `${name}: {value}`
+    }
+
+    return _.chain(mapData)
+      .filter(item => state ? item.country === country : true)
       .pluck('data')
       .flatten()
       .groupBy('date')
       .map((items, date) => ({
         date: new Date(+date),
-        value: items.reduce((memo, item) => memo + item[this.props.status], 0)
+        value: items.reduce((memo, item) => memo + item[status], 0)
       }))
       .value()
   }

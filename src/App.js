@@ -78,8 +78,16 @@ function App() {
 
     let keys = Object.keys(value)
 
-    keys.includes('country') && setCountry(value.country)
-    keys.includes('state')   && setState(value.state)
+    if (keys.includes('country')) {
+      setCountry(value.country)
+      setState()
+
+      return
+    }
+
+    if (keys.includes('state')) {
+      setState(value.state)
+    }
   }
 
   useEffect(() => {

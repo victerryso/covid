@@ -51,6 +51,7 @@ const countries = {
   "The Gambia": "Gambia",
   "Gambia, The": "Gambia",
   "Bahamas, The": "Bahamas",
+  "Cabo Verde": "Cape Verde",
 }
 
 const stateToCountry = [
