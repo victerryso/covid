@@ -22,6 +22,7 @@ import DailyTable from './components/DailyTable'
 import TimelineChart from './components/TimelineChart'
 import Statistics from './components/Statistics'
 import CountryChips from './components/CountryChips'
+import Loader from './components/Loader'
 
 const useStyles = makeStyles(theme => ({
   main: {
@@ -67,6 +68,7 @@ function App() {
   const [status, setStatus] = useState('confirmed');
   const [country, setCountry] = useState();
   const [state, setState] = useState();
+  const [ready, setReady] = useState();
 
   const handleClick = value => {
     if (!value) {
@@ -91,10 +93,13 @@ function App() {
   }
 
   useEffect(() => {
-    getCovidData().then(setMapData)
+    getCovidData().then(data => {
+      setMapData(data)
+      setTimeout(() => setReady(true), 1000)
+    })
   }, [])
 
-  if (mapData) {
+  if (ready) {
     let dates = mapData[0].data.map(({ date }) => +date).sort()
     let currentDate = date || dates[dates.length - 1]
 
@@ -235,7 +240,10 @@ function App() {
   }
 
   return (
-    <div className="App" />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Loader done={!!mapData} />
+    </ThemeProvider>
   );
 }
 
