@@ -52,6 +52,8 @@ const countries = {
   "Gambia, The": "Gambia",
   "Bahamas, The": "Bahamas",
   "Cabo Verde": "Cape Verde",
+  "Virgin Islands": "Virgin Islands, U.S.",
+  "Sint Maarten": "Sint Maarten (Dutch Part)"
 }
 
 const stateToCountry = [
@@ -61,8 +63,22 @@ const stateToCountry = [
   'Saint Barthelemy',
   'Gibraltar',
   'French Polynesia',
+  'Puerto Rico',
   'French Guiana',
+  'Guam',
   'Mayotte',
+  'Guadeloupe',
+  'Curacao',
+  'Virgin Islands',
+  'Cayman Islands',
+  'Reunion',
+  'Aruba',
+  'Montserrat',
+  'Greenland',
+  'New Caledonia',
+  'Bermuda',
+  'Sint Maarten',
+  'Isle of Man',
 ]
 
 let fixStateName = ({ state, country }) => {
