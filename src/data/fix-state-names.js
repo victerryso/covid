@@ -53,7 +53,8 @@ const countries = {
   "Bahamas, The": "Bahamas",
   "Cabo Verde": "Cape Verde",
   "Virgin Islands": "Virgin Islands, U.S.",
-  "Sint Maarten": "Sint Maarten (Dutch Part)"
+  "Sint Maarten": "Sint Maarten (Dutch Part)",
+  "East Timor": "Timor-Leste",
 }
 
 const stateToCountry = [
