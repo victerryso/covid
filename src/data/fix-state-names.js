@@ -81,6 +81,8 @@ const stateToCountry = [
   'Bermuda',
   'Sint Maarten',
   'Isle of Man',
+  'Hong Kong',
+  'Macau',
 ]
 
 let fixStateName = ({ state, country }) => {
