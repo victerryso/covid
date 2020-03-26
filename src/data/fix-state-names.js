@@ -55,7 +55,9 @@ const countries = {
   "Virgin Islands": "Virgin Islands, U.S.",
   "Sint Maarten": "Sint Maarten (Dutch Part)",
   "East Timor": "Timor-Leste",
-  "Syria": "Syrian Arab Republic"
+  "Syria": "Syrian Arab Republic",
+  "Laos": "Lao People's Democratic Republic",
+  "West Bank and Gaza": "Palestinian, State of",
 }
 
 const stateToCountry = [

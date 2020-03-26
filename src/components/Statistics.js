@@ -86,13 +86,6 @@ const Statistics = function (props) {
 
     },
     {
-      label: 'Recovered',
-      value: getValue({ date, status: 'recovered' }),
-      increment: getIncrementValue('recovered'),
-      hideOnSmall: false,
-
-    },
-    {
       label: 'Existing',
       value: getValue({ date, status: 'existing' }),
       increment: getIncrementValue('existing'),

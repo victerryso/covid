@@ -9,13 +9,13 @@ import flags from '../data/country-flags.json'
 
 const urls = [{
   title: 'confirmed',
-  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv`,
+  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv`,
 }, {
   title: 'deaths',
-  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv`,
-}, {
-  title: 'recovered',
-  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv`,
+  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv`,
+// }, {
+//   title: 'recovered',
+//   url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv`,
 }]
 
 // Transform data from source to geoJSON styling
@@ -82,7 +82,7 @@ const getCovidData = async () => {
         }))
         .map(item => ({
           ...item,
-          existing: item.confirmed - item.deaths - item.recovered,
+          existing: item.confirmed - item.deaths,
         }))
         .value()
     }))
