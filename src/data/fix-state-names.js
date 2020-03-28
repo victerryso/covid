@@ -109,6 +109,12 @@ let fixStateName = ({ state, country }) => {
     state = 'Diamond Princess'
   }
 
+  // Change ship to location
+  if (/Diamond Princess/.test(country)) {
+    country = 'Others'
+    state = 'Diamond Princess'
+  }
+
   // Canadian state id
   if (country === 'Canada') {
     let id = state.replace(/^.*,/g, '').trim()
