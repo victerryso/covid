@@ -58,6 +58,7 @@ const countries = {
   "Syria": "Syrian Arab Republic",
   "Laos": "Lao People's Democratic Republic",
   "West Bank and Gaza": "Palestinian, State of",
+  "Burma": "Myanmar",
 }
 
 const stateToCountry = [
