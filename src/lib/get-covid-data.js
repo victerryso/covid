@@ -31,7 +31,7 @@ const transformItem = ({ title, item }) => {
 
   let stateId = state && getStateId[country] && getStateId[country][state]
   let countryId = getCountryId(country)
-  let flag = flags[countryId] && flags[countryId].emoji
+  let flag = flags[countryId]
 
   return {
     state,
