@@ -1,1514 +1,1167 @@
-{
-  "AD": {
+[
+  {
+    "id": "AD",
     "country": "Andorra",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "andorraLow", "andorraHigh" ]
+    "map": "andorraLow"
   },
-  "AE": {
+  {
+    "id": "AE",
     "country": "United Arab Emirates",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "uaeLow", "uaeHigh" ]
+    "map": "uaeLow"
   },
-  "AF": {
-    "country": "Afghanistan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "AF",
+    "country": "Afghanistan"
   },
-  "AG": {
+  {
+    "id": "AG",
     "country": "Antigua and Barbuda",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "antiguaBarbudaLow", "antiguaBarbudaHigh" ]
+    "map": "antiguaBarbudaLow"
   },
-  "AI": {
+  {
+    "id": "AI",
     "country": "Anguilla",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "anguillaLow", "anguillaHigh" ]
+    "map": "anguillaLow"
   },
-  "AL": {
+  {
+    "id": "AL",
     "country": "Albania",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "albaniaLow", "albaniaHigh" ]
+    "map": "albaniaLow"
   },
-  "AM": {
+  {
+    "id": "AM",
     "country": "Armenia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "armeniaLow", "armeniaHigh" ]
+    "map": "armeniaLow"
   },
-  "AO": {
+  {
+    "id": "AO",
     "country": "Angola",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "angolaLow", "angolaHigh" ]
+    "map": "angolaLow"
   },
-  "AQ": {
-    "country": "Antarctica",
-    "continent_code": "AN",
-    "continent": "Antarctica",
-    "maps": []
+  {
+    "id": "AQ",
+    "country": "Antarctica"
   },
-  "AR": {
+  {
+    "id": "AR",
     "country": "Argentina",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "argentinaLow", "argentinaHigh" ]
+    "map": "argentinaLow"
   },
-  "AS": {
+  {
+    "id": "AS",
     "country": "American Samoa",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "americanSamoaLow", "americanSamoaHigh" ]
+    "map": "americanSamoaLow"
   },
-  "AT": {
+  {
+    "id": "AT",
     "country": "Austria",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "austriaLow", "austriaHigh" ]
+    "map": "austriaLow"
   },
-  "AU": {
+  {
+    "id": "AU",
     "country": "Australia",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "australiaLow", "australiaHigh" ]
+    "map": "australiaLow"
   },
-  "AW": {
+  {
+    "id": "AW",
     "country": "Aruba",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "arubaLow", "arubaHigh" ]
+    "map": "arubaLow"
   },
-  "AX": {
-    "country": "Aland Islands",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "AX",
+    "country": "Aland Islands"
   },
-  "AZ": {
+  {
+    "id": "AZ",
     "country": "Azerbaijan",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "azerbaijanLow", "azerbaijanHigh" ]
+    "map": "azerbaijanLow"
   },
-  "BA": {
+  {
+    "id": "BA",
     "country": "Bosnia and Herzegovina",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "bosniaHerzegovinaLow", "bosniaHerzegovinaHigh", "bosniaHerzegovinaCantonsLow", "bosniaHerzegovinaCantonsHigh" ]
+    "map": "bosniaHerzegovinaLow"
   },
-  "BB": {
+  {
+    "id": "BB",
     "country": "Barbados",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "barbadosLow", "barbadosHigh" ]
+    "map": "barbadosLow"
   },
-  "BD": {
+  {
+    "id": "BD",
     "country": "Bangladesh",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "bangladeshLow", "bangladeshHigh" ]
+    "map": "bangladeshLow"
   },
-  "BE": {
+  {
+    "id": "BE",
     "country": "Belgium",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "belgiumLow", "belgiumHigh" ]
+    "map": "belgiumLow"
   },
-  "BF": {
+  {
+    "id": "BF",
     "country": "Burkina Faso",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "burkinaFasoLow", "burkinaFasoHigh" ]
+    "map": "burkinaFasoLow"
   },
-  "BG": {
+  {
+    "id": "BG",
     "country": "Bulgaria",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "bulgariaLow", "bulgariaHigh" ]
+    "map": "bulgariaLow"
   },
-  "BH": {
+  {
+    "id": "BH",
     "country": "Bahrain",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "bahrainLow", "bahrainHigh" ]
+    "map": "bahrainLow"
   },
-  "BI": {
+  {
+    "id": "BI",
     "country": "Burundi",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "burundiLow", "burundiHigh" ]
+    "map": "burundiLow"
   },
-  "BJ": {
+  {
+    "id": "BJ",
     "country": "Benin",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "beninLow", "beninHigh" ]
+    "map": "beninLow"
   },
-  "BL": {
-    "country": "Saint Barthelemy",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "BL",
+    "country": "Saint Barthelemy"
   },
-  "BM": {
+  {
+    "id": "BM",
     "country": "Bermuda",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "bermudaLow", "bermudaHigh" ]
+    "map": "bermudaLow"
   },
-  "BN": {
+  {
+    "id": "BN",
     "country": "Brunei Darussalam",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "bruneiDarussalamLow", "bruneiDarussalamHigh" ]
+    "map": "bruneiDarussalamLow"
   },
-  "BO": {
+  {
+    "id": "BO",
     "country": "Bolivia, Plurinational State of",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "boliviaLow", "boliviaHigh" ]
+    "map": "boliviaLow"
   },
-  "BQ": {
+  {
+    "id": "BQ",
     "country": "Bonaire, Sint Eustatius and Saba",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "bonaireSintEustatiusSabaLow", "bonaireSintEustatiusSabaHigh" ]
+    "map": "bonaireSintEustatiusSabaLow"
   },
-  "BR": {
+  {
+    "id": "BR",
     "country": "Brazil",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "brazilLow", "brazilHigh" ]
+    "map": "brazilLow"
   },
-  "BS": {
-    "country": "Bahamas",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "BS",
+    "country": "Bahamas"
   },
-  "BT": {
+  {
+    "id": "BT",
     "country": "Bhutan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "bhutanLow", "bhutanHigh" ]
+    "map": "bhutanLow"
   },
-  "BV": {
-    "country": "Bouvet Island",
-    "continent_code": "AN",
-    "continent": "Antarctica",
-    "maps": []
+  {
+    "id": "BV",
+    "country": "Bouvet Island"
   },
-  "BW": {
+  {
+    "id": "BW",
     "country": "Botswana",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "botswanaLow", "botswanaHigh" ]
+    "map": "botswanaLow"
   },
-  "BY": {
+  {
+    "id": "BY",
     "country": "Belarus",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "belarusLow", "belarusHigh" ]
+    "map": "belarusLow"
   },
-  "BZ": {
+  {
+    "id": "BZ",
     "country": "Belize",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "belizeLow", "belizeHigh" ]
+    "map": "belizeLow"
   },
-  "CA": {
+  {
+    "id": "CA",
     "country": "Canada",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "canadaLow", "canadaHigh" ]
+    "map": "canadaLow"
   },
-  "CC": {
-    "country": "Cocos (Keeling) Islands",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "CC",
+    "country": "Cocos (Keeling) Islands"
   },
-  "CD": {
+  {
+    "id": "CD",
     "country": "Congo, the Democratic Republic of the",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "congoDRLow", "congoDRHigh" ]
+    "map": "congoDRLow"
   },
-  "CF": {
+  {
+    "id": "CF",
     "country": "Central African Republic",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "centralAfricanRepublicLow", "centralAfricanRepublicHigh" ]
+    "map": "centralAfricanRepublicLow"
   },
-  "CG": {
+  {
+    "id": "CG",
     "country": "Congo",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "congoLow", "congoHigh" ]
+    "map": "congoLow"
   },
-  "CH": {
+  {
+    "id": "CH",
     "country": "Switzerland",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "switzerlandLow", "switzerlandHigh" ]
+    "map": "switzerlandLow"
   },
-  "CI": {
-    "country": "Cote d'Ivoire",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "CI",
+    "country": "Cote d'Ivoire"
   },
-  "CK": {
-    "country": "Cook Islands",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "CK",
+    "country": "Cook Islands"
   },
-  "CL": {
+  {
+    "id": "CL",
     "country": "Chile",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "chileLow", "chileHigh" ]
+    "map": "chileLow"
   },
-  "CM": {
+  {
+    "id": "CM",
     "country": "Cameroon",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "cameroonLow", "cameroonHigh" ]
+    "map": "cameroonLow"
   },
-  "CN": {
+  {
+    "id": "CN",
     "country": "China",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "chinaLow", "chinaHigh" ]
+    "map": "chinaLow"
   },
-  "CO": {
+  {
+    "id": "CO",
     "country": "Colombia",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "colombiaLow", "colombiaHigh", "colombiaMuniLow", "colombiaMuniHigh" ]
+    "map": "colombiaLow"
   },
-  "CR": {
+  {
+    "id": "CR",
     "country": "Costa Rica",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "costaRicaLow", "costaRicaHigh" ]
+    "map": "costaRicaLow"
   },
-  "CU": {
-    "country": "Cuba",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "CU",
+    "country": "Cuba"
   },
-  "CV": {
+  {
+    "id": "CV",
     "country": "Cape Verde",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "capeVerdeLow", "capeVerdeHigh" ]
+    "map": "capeVerdeLow"
   },
-  "CW": {
+  {
+    "id": "CW",
     "country": "Curacao",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "curacaoLow", "curacaoHigh" ]
+    "map": "curacaoLow"
   },
-  "CX": {
-    "country": "Christmas Island",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "CX",
+    "country": "Christmas Island"
   },
-  "CY": {
+  {
+    "id": "CY",
     "country": "Cyprus",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "cyprusLow", "cyprusHigh", "cyprusNorthCyprusLow", "cyprusNorthCyprusHigh" ]
+    "map": "cyprusLow"
   },
-  "CZ": {
+  {
+    "id": "CZ",
     "country": "Czech Republic",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "czechiaLow", "czechiaHigh" ]
+    "map": "czechiaLow"
   },
-  "DE": {
+  {
+    "id": "DE",
     "country": "Germany",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "germanyLow", "germanyHigh" ]
+    "map": "germanyLow"
   },
-  "DJ": {
+  {
+    "id": "DJ",
     "country": "Djibouti",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "djiboutiLow", "djiboutiHigh" ]
+    "map": "djiboutiLow"
   },
-  "DK": {
+  {
+    "id": "DK",
     "country": "Denmark",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "denmarkLow", "denmarkHigh" ]
+    "map": "denmarkLow"
   },
-  "DM": {
+  {
+    "id": "DM",
     "country": "Dominica",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "dominicaLow", "dominicaHigh" ]
+    "map": "dominicaLow"
   },
-  "DO": {
+  {
+    "id": "DO",
     "country": "Dominican Republic",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "dominicanRepublicLow", "dominicanRepublicHigh", "dominicanRepublicMuniLow", "dominicanRepublicMuniHigh" ]
+    "map": "dominicanRepublicLow"
   },
-  "DZ": {
+  {
+    "id": "DZ",
     "country": "Algeria",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "algeriaLow", "algeriaHigh" ]
+    "map": "algeriaLow"
   },
-  "EC": {
+  {
+    "id": "EC",
     "country": "Ecuador",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "ecuadorLow", "ecuadorHigh" ]
+    "map": "ecuadorLow"
   },
-  "EE": {
+  {
+    "id": "EE",
     "country": "Estonia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "estoniaLow", "estoniaHigh" ]
+    "map": "estoniaLow"
   },
-  "EG": {
+  {
+    "id": "EG",
     "country": "Egypt",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "egyptLow", "egyptHigh" ]
+    "map": "egyptLow"
   },
-  "EH": {
-    "country": "Western Sahara",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "EH",
+    "country": "Western Sahara"
   },
-  "ER": {
-    "country": "Eritrea",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "ER",
+    "country": "Eritrea"
   },
-  "ES": {
+  {
+    "id": "ES",
     "country": "Spain",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "spainLow", "spainHigh", "spainProvincesLow", "spainProvincesHigh" ]
+    "map": "spainLow"
   },
-  "ET": {
-    "country": "Ethiopia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "ET",
+    "country": "Ethiopia"
   },
-  "FI": {
+  {
+    "id": "FI",
     "country": "Finland",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "finlandLow", "finlandHigh" ]
+    "map": "finlandLow"
   },
-  "FJ": {
+  {
+    "id": "FJ",
     "country": "Fiji",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "fijiEastLow", "fijiEastHigh", "fijiWestLow", "fijiWestHigh" ]
+    "map": "fijiEastLow"
   },
-  "FK": {
-    "country": "Falkland Islands (Malvinas)",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": []
+  {
+    "id": "FK",
+    "country": "Falkland Islands (Malvinas)"
   },
-  "FM": {
-    "country": "Micronesia, Federated States of",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "FM",
+    "country": "Micronesia, Federated States of"
   },
-  "FO": {
+  {
+    "id": "FO",
     "country": "Faroe Islands",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "faroeIslandsLow", "faroeIslandsHigh" ]
+    "map": "faroeIslandsLow"
   },
-  "FR": {
+  {
+    "id": "FR",
     "country": "France",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "franceLow", "franceHigh", "franceDepartmentsLow", "franceDepartmentsHigh" ]
+    "map": "franceLow"
   },
-  "GA": {
+  {
+    "id": "GA",
     "country": "Gabon",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "gabonLow", "gabonHigh" ]
+    "map": "gabonLow"
   },
-  "GB": {
+  {
+    "id": "GB",
     "country": "United Kingdom",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "ukLow", "ukHigh", "ukCountiesLow", "ukCountiesHigh" ]
+    "map": "ukLow"
   },
-  "GB-CHA": {
+  {
+    "id": "GB-CHA",
     "country": "Channel Islands",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "channelIslandsLow", "channelIslandsHigh" ]
+    "map": "channelIslandsLow"
   },
-  "GD": {
-    "country": "Grenada",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "GD",
+    "country": "Grenada"
   },
-  "GE": {
+  {
+    "id": "GE",
     "country": "Georgia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "georgiaLow", "georgiaHigh", "georgiaSouthOssetiaLow", "georgiaSouthOssetiaHigh" ]
+    "map": "georgiaLow"
   },
-  "GF": {
+  {
+    "id": "GF",
     "country": "French Guiana",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "frenchGuianaLow", "frenchGuianaHigh" ]
+    "map": "frenchGuianaLow"
   },
-  "GG": {
-    "country": "Guernsey",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "GG",
+    "country": "Guernsey"
   },
-  "GH": {
-    "country": "Ghana",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "GH",
+    "country": "Ghana"
   },
-  "GI": {
-    "country": "Gibraltar",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "GI",
+    "country": "Gibraltar"
   },
-  "GL": {
+  {
+    "id": "GL",
     "country": "Greenland",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "greenlandLow", "greenlandHigh" ]
+    "map": "greenlandLow"
   },
-  "GM": {
-    "country": "Gambia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "GM",
+    "country": "Gambia"
   },
-  "GN": {
+  {
+    "id": "GN",
     "country": "Guinea",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "guineaLow", "guineaHigh" ]
+    "map": "guineaLow"
   },
-  "GP": {
-    "country": "Guadeloupe",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "GP",
+    "country": "Guadeloupe"
   },
-  "GQ": {
+  {
+    "id": "GQ",
     "country": "Equatorial Guinea",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "equatorialGuineaLow", "equatorialGuineaHigh" ]
+    "map": "equatorialGuineaLow"
   },
-  "GR": {
+  {
+    "id": "GR",
     "country": "Greece",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "greeceLow", "greeceHigh" ]
+    "map": "greeceLow"
   },
-  "GS": {
-    "country": "South Georgia and the South Sandwich Islands",
-    "continent_code": "AN",
-    "continent": "Antarctica",
-    "maps": []
+  {
+    "id": "GS",
+    "country": "South Georgia and the South Sandwich Islands"
   },
-  "GT": {
-    "country": "Guatemala",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "GT",
+    "country": "Guatemala"
   },
-  "GU": {
-    "country": "Guam",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "GU",
+    "country": "Guam"
   },
-  "GW": {
-    "country": "Guinea-Bissau",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "GW",
+    "country": "Guinea-Bissau"
   },
-  "GY": {
-    "country": "Guyana",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": []
+  {
+    "id": "GY",
+    "country": "Guyana"
   },
-  "HK": {
+  {
+    "id": "HK",
     "country": "Hong Kong",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "hongKongLow", "hongKongHigh" ]
+    "map": "hongKongLow"
   },
-  "HM": {
-    "country": "Heard Island and McDonald Islands",
-    "continent_code": "AN",
-    "continent": "Antarctica",
-    "maps": []
+  {
+    "id": "HM",
+    "country": "Heard Island and McDonald Islands"
   },
-  "HN": {
+  {
+    "id": "HN",
     "country": "Honduras",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "hondurasLow", "hondurasHigh" ]
+    "map": "hondurasLow"
   },
-  "HR": {
+  {
+    "id": "HR",
     "country": "Croatia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "croatiaLow", "croatiaHigh" ]
+    "map": "croatiaLow"
   },
-  "HT": {
-    "country": "Haiti",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "HT",
+    "country": "Haiti"
   },
-  "HU": {
+  {
+    "id": "HU",
     "country": "Hungary",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "hungaryLow", "hungaryHigh" ]
+    "map": "hungaryLow"
   },
-  "ID": {
+  {
+    "id": "ID",
     "country": "Indonesia",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "indonesiaLow", "indonesiaHigh" ]
+    "map": "indonesiaLow"
   },
-  "IE": {
+  {
+    "id": "IE",
     "country": "Ireland",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "irelandLow", "irelandHigh" ]
+    "map": "irelandLow"
   },
-  "IL": {
+  {
+    "id": "IL",
     "country": "Israel",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "israelLow", "israelHigh", "israelPalestineLow", "israelPalestineHigh" ]
+    "map": "israelLow"
   },
-  "IM": {
-    "country": "Isle of Man",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "IM",
+    "country": "Isle of Man"
   },
-  "IN": {
+  {
+    "id": "IN",
     "country": "India",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "indiaLow", "indiaHigh" ]
+    "map": "indiaLow"
   },
-  "IO": {
-    "country": "British Indian Ocean Territory",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "IO",
+    "country": "British Indian Ocean Territory"
   },
-  "IQ": {
-    "country": "Iraq",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "IQ",
+    "country": "Iraq"
   },
-  "IR": {
-    "country": "Iran, Islamic Republic of",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "IR",
+    "country": "Iran, Islamic Republic of"
   },
-  "IS": {
+  {
+    "id": "IS",
     "country": "Iceland",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "icelandLow", "icelandHigh" ]
+    "map": "icelandLow"
   },
-  "IT": {
+  {
+    "id": "IT",
     "country": "Italy",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "italyLow", "italyHigh" ]
+    "map": "italyLow"
   },
-  "JE": {
-    "country": "Jersey",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "JE",
+    "country": "Jersey"
   },
-  "JM": {
-    "country": "Jamaica",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "JM",
+    "country": "Jamaica"
   },
-  "JO": {
-    "country": "Jordan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "JO",
+    "country": "Jordan"
   },
-  "JP": {
+  {
+    "id": "JP",
     "country": "Japan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "japanLow", "japanHigh" ]
+    "map": "japanLow"
   },
-  "KE": {
+  {
+    "id": "KE",
     "country": "Kenya",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "kenyaLow", "kenyaHigh" ]
+    "map": "kenyaLow"
   },
-  "KG": {
+  {
+    "id": "KG",
     "country": "Kyrgyzstan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "kyrgyzstanLow", "kyrgyzstanHigh" ]
+    "map": "kyrgyzstanLow"
   },
-  "KH": {
+  {
+    "id": "KH",
     "country": "Cambodia",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "cambodiaLow", "cambodiaHigh" ]
+    "map": "cambodiaLow"
   },
-  "KI": {
-    "country": "Kiribati",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "KI",
+    "country": "Kiribati"
   },
-  "KM": {
-    "country": "Comoros",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "KM",
+    "country": "Comoros"
   },
-  "KN": {
-    "country": "Saint Kitts and Nevis",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "KN",
+    "country": "Saint Kitts and Nevis"
   },
-  "KP": {
+  {
+    "id": "KP",
     "country": "Korea, Democratic People's Republic of",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "northKoreaLow", "northKoreaHigh" ]
+    "map": "northKoreaLow"
   },
-  "KR": {
+  {
+    "id": "KR",
     "country": "Korea, Republic of",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "southKoreaLow", "southKoreaHigh" ]
+    "map": "southKoreaLow"
   },
-  "KT": {
+  {
+    "id": "KT",
     "country": "Saint Kitts and Nevis",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "stKittsNevisLow", "stKittsNevisHigh" ]
+    "map": "stKittsNevisLow"
   },
-  "KW": {
-    "country": "Kuwait",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "KW",
+    "country": "Kuwait"
   },
-  "KY": {
-    "country": "Cayman Islands",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "KY",
+    "country": "Cayman Islands"
   },
-  "KZ": {
+  {
+    "id": "KZ",
     "country": "Kazakhstan",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "kazakhstanLow", "kazakhstanHigh" ]
+    "map": "kazakhstanLow"
   },
-  "LA": {
-    "country": "Lao People's Democratic Republic",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "LA",
+    "country": "Lao People's Democratic Republic"
   },
-  "LB": {
-    "country": "Lebanon",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "LB",
+    "country": "Lebanon"
   },
-  "LC": {
+  {
+    "id": "LC",
     "country": "Saint Lucia",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "saintLuciaLow", "saintLuciaHigh" ]
+    "map": "saintLuciaLow"
   },
-  "LI": {
+  {
+    "id": "LI",
     "country": "Liechtenstein",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "liechtensteinLow", "liechtensteinHigh" ]
+    "map": "liechtensteinLow"
   },
-  "LK": {
+  {
+    "id": "LK",
     "country": "Sri Lanka",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "sriLankaLow", "sriLankaHigh" ]
+    "map": "sriLankaLow"
   },
-  "LR": {
-    "country": "Liberia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "LR",
+    "country": "Liberia"
   },
-  "LS": {
-    "country": "Lesotho",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "LS",
+    "country": "Lesotho"
   },
-  "LT": {
+  {
+    "id": "LT",
     "country": "Lithuania",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "lithuaniaLow", "lithuaniaHigh" ]
+    "map": "lithuaniaLow"
   },
-  "LU": {
-    "country": "Luxembourg",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "LU",
+    "country": "Luxembourg"
   },
-  "LV": {
+  {
+    "id": "LV",
     "country": "Latvia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "latviaLow", "latviaHigh" ]
+    "map": "latviaLow"
   },
-  "LY": {
-    "country": "Libya",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "LY",
+    "country": "Libya"
   },
-  "MA": {
+  {
+    "id": "MA",
     "country": "Morocco",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "moroccoLow", "moroccoHigh" ]
+    "map": "moroccoLow"
   },
-  "MC": {
-    "country": "Monaco",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "MC",
+    "country": "Monaco"
   },
-  "MD": {
+  {
+    "id": "MD",
     "country": "Moldova, Republic of",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "moldovaLow", "moldovaHigh" ]
+    "map": "moldovaLow"
   },
-  "ME": {
-    "country": "Montenegro",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "ME",
+    "country": "Montenegro"
   },
-  "MF": {
-    "country": "Saint Martin (French Part)",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "MF",
+    "country": "Saint Martin (French Part)"
   },
-  "MG": {
-    "country": "Madagascar",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "MG",
+    "country": "Madagascar"
   },
-  "MH": {
-    "country": "Marshall Islands",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "MH",
+    "country": "Marshall Islands"
   },
-  "MK": {
-    "country": "North Macedonia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": []
+  {
+    "id": "MK",
+    "country": "North Macedonia"
   },
-  "ML": {
+  {
+    "id": "ML",
     "country": "Mali",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "maliLow", "maliHigh" ]
+    "map": "maliLow"
   },
-  "MM": {
-    "country": "Myanmar",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "MM",
+    "country": "Myanmar"
   },
-  "MN": {
+  {
+    "id": "MN",
     "country": "Mongolia",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "mongoliaLow", "mongoliaHigh" ]
+    "map": "mongoliaLow"
   },
-  "MO": {
-    "country": "Macao",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "MO",
+    "country": "Macao"
   },
-  "MP": {
-    "country": "Northern Mariana Islands",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "MP",
+    "country": "Northern Mariana Islands"
   },
-  "MQ": {
-    "country": "Martinique",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "MQ",
+    "country": "Martinique"
   },
-  "MR": {
-    "country": "Mauritania",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "MR",
+    "country": "Mauritania"
   },
-  "MS": {
-    "country": "Montserrat",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "MS",
+    "country": "Montserrat"
   },
-  "MT": {
+  {
+    "id": "MT",
     "country": "Malta",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "maltaLow", "maltaHigh" ]
+    "map": "maltaLow"
   },
-  "MU": {
-    "country": "Mauritius",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "MU",
+    "country": "Mauritius"
   },
-  "MV": {
+  {
+    "id": "MV",
     "country": "Maldives",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "maldivesLow", "maldivesHigh", "maldivesIslandsLow", "maldivesIslandsHigh" ]
+    "map": "maldivesLow"
   },
-  "MW": {
-    "country": "Malawi",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "MW",
+    "country": "Malawi"
   },
-  "MX": {
+  {
+    "id": "MX",
     "country": "Mexico",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "mexicoLow", "mexicoHigh" ]
+    "map": "mexicoLow"
   },
-  "MY": {
+  {
+    "id": "MY",
     "country": "Malaysia",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "malaysiaLow", "malaysiaHigh" ]
+    "map": "malaysiaLow"
   },
-  "MZ": {
-    "country": "Mozambique",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "MZ",
+    "country": "Mozambique"
   },
-  "NA": {
+  {
+    "id": "NA",
     "country": "Namibia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "namibiaLow", "namibiaHigh" ]
+    "map": "namibiaLow"
   },
-  "NC": {
-    "country": "New Caledonia",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "NC",
+    "country": "New Caledonia"
   },
-  "NE": {
-    "country": "Niger",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "NE",
+    "country": "Niger"
   },
-  "NF": {
-    "country": "Norfolk Island",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "NF",
+    "country": "Norfolk Island"
   },
-  "NG": {
+  {
+    "id": "NG",
     "country": "Nigeria",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "nigeriaLow", "nigeriaHigh" ]
+    "map": "nigeriaLow"
   },
-  "NI": {
+  {
+    "id": "NI",
     "country": "Nicaragua",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "nicaraguaLow", "nicaraguaHigh" ]
+    "map": "nicaraguaLow"
   },
-  "NL": {
+  {
+    "id": "NL",
     "country": "Netherlands",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "netherlandsLow", "netherlandsHigh" ]
+    "map": "netherlandsLow"
   },
-  "NO": {
+  {
+    "id": "NO",
     "country": "Norway",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "norwayLow", "norwayHigh" ]
+    "map": "norwayLow"
   },
-  "NP": {
+  {
+    "id": "NP",
     "country": "Nepal",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "nepalLow", "nepalHigh" ]
+    "map": "nepalLow"
   },
-  "NR": {
-    "country": "Nauru",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "NR",
+    "country": "Nauru"
   },
-  "NU": {
-    "country": "Niue",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "NU",
+    "country": "Niue"
   },
-  "NZ": {
+  {
+    "id": "NZ",
     "country": "New Zealand",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "newZealandLow", "newZealandHigh" ]
+    "map": "newZealandLow"
   },
-  "OM": {
+  {
+    "id": "OM",
     "country": "Oman",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "omanLow", "omanHigh" ]
+    "map": "omanLow"
   },
-  "PA": {
+  {
+    "id": "PA",
     "country": "Panama",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "panamaLow", "panamaHigh" ]
+    "map": "panamaLow"
   },
-  "PE": {
+  {
+    "id": "PE",
     "country": "Peru",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "peruLow", "peruHigh" ]
+    "map": "peruLow"
   },
-  "PF": {
-    "country": "French Polynesia",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "PF",
+    "country": "French Polynesia"
   },
-  "PG": {
-    "country": "Papua New Guinea",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "PG",
+    "country": "Papua New Guinea"
   },
-  "PH": {
+  {
+    "id": "PH",
     "country": "Philippines",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "philippinesLow", "philippinesHigh" ]
+    "map": "philippinesLow"
   },
-  "PK": {
+  {
+    "id": "PK",
     "country": "Pakistan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "pakistanLow", "pakistanHigh" ]
+    "map": "pakistanLow"
   },
-  "PL": {
+  {
+    "id": "PL",
     "country": "Poland",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "polandLow", "polandHigh" ]
+    "map": "polandLow"
   },
-  "PM": {
+  {
+    "id": "PM",
     "country": "Saint Pierre and Miquelon",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "stPierreMiquelonLow", "stPierreMiquelonHigh" ]
+    "map": "stPierreMiquelonLow"
   },
-  "PN": {
-    "country": "Pitcairn",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "PN",
+    "country": "Pitcairn"
   },
-  "PR": {
+  {
+    "id": "PR",
     "country": "Puerto Rico",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "puertoRicoLow", "puertoRicoHigh" ]
+    "map": "puertoRicoLow"
   },
-  "PS": {
+  {
+    "id": "PS",
     "country": "Palestinian, State of",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "palestineLow", "palestineHigh" ]
+    "map": "palestineLow"
   },
-  "PT": {
+  {
+    "id": "PT",
     "country": "Portugal",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "portugalLow", "portugalHigh", "portugalRegionsLow", "portugalRegionsHigh" ]
+    "map": "portugalLow"
   },
-  "PW": {
-    "country": "Palau",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "PW",
+    "country": "Palau"
   },
-  "PY": {
+  {
+    "id": "PY",
     "country": "Paraguay",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "paraguayLow", "paraguayHigh"]
+    "map": "paraguayLow"
   },
-  "QA": {
+  {
+    "id": "QA",
     "country": "Qatar",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "qatarLow", "qatarHigh" ]
+    "map": "qatarLow"
   },
-  "RE": {
-    "country": "Reunion",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "RE",
+    "country": "Reunion"
   },
-  "RO": {
+  {
+    "id": "RO",
     "country": "Romania",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "romaniaLow", "romaniaHigh" ]
+    "map": "romaniaLow"
   },
-  "RS": {
+  {
+    "id": "RS",
     "country": "Serbia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "serbiaLow", "serbiaHigh", "serbiaNoKosovoLow", "serbiaNoKosovoHigh" ]
+    "map": "serbiaLow"
   },
-  "RU": {
+  {
+    "id": "RU",
     "country": "Russian Federation",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "russiaLow", "russiaHigh", "russiaCrimeaLow", "russiaCrimeaHigh" ]
+    "map": "russiaLow"
   },
-  "RW": {
-    "country": "Rwanda",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "RW",
+    "country": "Rwanda"
   },
-  "SA": {
+  {
+    "id": "SA",
     "country": "Saudi Arabia",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "saudiArabiaLow", "saudiArabiaHigh" ]
+    "map": "saudiArabiaLow"
   },
-  "SB": {
+  {
+    "id": "SB",
     "country": "Solomon Islands",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "solomonIslandsLow", "solomonIslandsHigh" ]
+    "map": "solomonIslandsLow"
   },
-  "SC": {
+  {
+    "id": "SC",
     "country": "Seychelles",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "seychellesLow", "seychellesHigh" ]
+    "map": "seychellesLow"
   },
-  "SD": {
+  {
+    "id": "SD",
     "country": "Sudan",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "sudanLow", "sudanHigh" ]
+    "map": "sudanLow"
   },
-  "SE": {
+  {
+    "id": "SE",
     "country": "Sweden",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "swedenLow", "swedenHigh" ]
+    "map": "swedenLow"
   },
-  "SG": {
+  {
+    "id": "SG",
     "country": "Singapore",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "singaporeLow", "singaporeHigh" ]
+    "map": "singaporeLow"
   },
-  "SH": {
+  {
+    "id": "SH",
     "country": "Saint Helena, Ascension and Tristan da Cunha",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "saintHelenaLow", "saintHelenaHigh" ]
+    "map": "saintHelenaLow"
   },
-  "SI": {
+  {
+    "id": "SI",
     "country": "Slovenia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "sloveniaLow", "sloveniaHigh", "sloveniaRegionsLow", "sloveniaRegionsHigh" ]
+    "map": "sloveniaLow"
   },
-  "SJ": {
+  {
+    "id": "SJ",
     "country": "Svalbard and Jan Mayen",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "svalbardLow", "svalbardHigh" ]
+    "map": "svalbardLow"
   },
-  "SK": {
+  {
+    "id": "SK",
     "country": "Slovakia",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "slovakiaLow", "slovakiaHigh" ]
+    "map": "slovakiaLow"
   },
-  "SL": {
-    "country": "Sierra Leone",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "SL",
+    "country": "Sierra Leone"
   },
-  "SM": {
+  {
+    "id": "SM",
     "country": "San Marino",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "sanMarinoLow", "sanMarinoHigh" ]
+    "map": "sanMarinoLow"
   },
-  "SN": {
+  {
+    "id": "SN",
     "country": "Senegal",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "senegalLow", "senegalHigh" ]
+    "map": "senegalLow"
   },
-  "SO": {
+  {
+    "id": "SO",
     "country": "Somalia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "somaliaLow", "somaliaHigh" ]
+    "map": "somaliaLow"
   },
-  "SR": {
-    "country": "Suriname",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": []
+  {
+    "id": "SR",
+    "country": "Suriname"
   },
-  "SS": {
-    "country": "South Sudan",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "SS",
+    "country": "South Sudan"
   },
-  "ST": {
+  {
+    "id": "ST",
     "country": "Sao Tome and Principe",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "saoTomePrincipeLow", "saoTomePrincipeHigh" ]
+    "map": "saoTomePrincipeLow"
   },
-  "SV": {
+  {
+    "id": "SV",
     "country": "El Salvador",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "elSalvadorLow", "elSalvadorHigh" ]
+    "map": "elSalvadorLow"
   },
-  "SX": {
-    "country": "Sint Maarten (Dutch Part)",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "SX",
+    "country": "Sint Maarten (Dutch Part)"
   },
-  "SY": {
+  {
+    "id": "SY",
     "country": "Syrian Arab Republic",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "syriaLow", "syriaHigh" ]
+    "map": "syriaLow"
   },
-  "SZ": {
+  {
+    "id": "SZ",
     "country": "Swaziland",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "eswatiniLow", "eswatiniHigh" ]
+    "map": "eswatiniLow"
   },
-  "TC": {
-    "country": "Turks and Caicos Islands",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "TC",
+    "country": "Turks and Caicos Islands"
   },
-  "TD": {
+  {
+    "id": "TD",
     "country": "Chad",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "chadLow", "chadHigh" ]
+    "map": "chadLow"
   },
-  "TF": {
-    "country": "French Southern Territories",
-    "continent_code": "AN",
-    "continent": "Antarctica",
-    "maps": []
+  {
+    "id": "TF",
+    "country": "French Southern Territories"
   },
-  "TG": {
-    "country": "Togo",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "TG",
+    "country": "Togo"
   },
-  "TH": {
+  {
+    "id": "TH",
     "country": "Thailand",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "thailandLow", "thailandHigh" ]
+    "map": "thailandLow"
   },
-  "TJ": {
+  {
+    "id": "TJ",
     "country": "Tajikistan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "tajikistanLow", "tajikistanHigh" ]
+    "map": "tajikistanLow"
   },
-  "TK": {
-    "country": "Tokelau",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "TK",
+    "country": "Tokelau"
   },
-  "TL": {
-    "country": "Timor-Leste",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "TL",
+    "country": "Timor-Leste"
   },
-  "TM": {
-    "country": "Turkmenistan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "TM",
+    "country": "Turkmenistan"
   },
-  "TN": {
+  {
+    "id": "TN",
     "country": "Tunisia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "tunisiaLow", "tunisiaHigh" ]
+    "map": "tunisiaLow"
   },
-  "TO": {
-    "country": "Tonga",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "TO",
+    "country": "Tonga"
   },
-  "TR": {
+  {
+    "id": "TR",
     "country": "Turkey",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "turkeyLow", "turkeyHigh" ]
+    "map": "turkeyLow"
   },
-  "TT": {
-    "country": "Trinidad and Tobago",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "TT",
+    "country": "Trinidad and Tobago"
   },
-  "TV": {
-    "country": "Tuvalu",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "TV",
+    "country": "Tuvalu"
   },
-  "TW": {
-    "country": "Taiwan, Province of China",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": []
+  {
+    "id": "TW",
+    "country": "Taiwan, Province of China"
   },
-  "TZ": {
+  {
+    "id": "TZ",
     "country": "Tanzania, United Republic of",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "tanzaniaLow", "tanzaniaHigh" ]
+    "map": "tanzaniaLow"
   },
-  "UA": {
+  {
+    "id": "UA",
     "country": "Ukraine",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "ukraineLow", "ukraineHigh" ]
+    "map": "ukraineLow"
   },
-  "UG": {
-    "country": "Uganda",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "UG",
+    "country": "Uganda"
   },
-  "UM": {
-    "country": "United States Minor Outlying Islands",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "UM",
+    "country": "United States Minor Outlying Islands"
   },
-  "US": {
+  {
+    "id": "US",
     "country": "United States",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "usaLow", "usaHigh", "usaTerritoriesLow", "usaTerritoriesHigh", "usaTerritories2Low", "usaTerritories2High" ]
+    "map": "usaLow"
   },
-  "UY": {
-    "country": "Uruguay",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": []
+  {
+    "id": "UY",
+    "country": "Uruguay"
   },
-  "UZ": {
+  {
+    "id": "UZ",
     "country": "Uzbekistan",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "uzbekinstanLow", "uzbekinstanHigh" ]
+    "map": "uzbekinstanLow"
   },
-  "VA": {
+  {
+    "id": "VA",
     "country": "Holy See (Vatican City State)",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "vaticanLow", "vaticanHigh" ]
+    "map": "vaticanLow"
   },
-  "VC": {
+  {
+    "id": "VC",
     "country": "Saint Vincent and the Grenadines",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": [ "saintVincentLow", "saintVincentHigh" ]
+    "map": "saintVincentLow"
   },
-  "VE": {
+  {
+    "id": "VE",
     "country": "Venezuela, Bolivarian Republic of",
-    "continent_code": "SA",
-    "continent": "South America",
-    "maps": [ "venezuelaLow", "venezuelaHigh" ]
+    "map": "venezuelaLow"
   },
-  "VG": {
-    "country": "Virgin Islands, British",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "VG",
+    "country": "Virgin Islands, British"
   },
-  "VI": {
-    "country": "Virgin Islands, U.S.",
-    "continent_code": "NA",
-    "continent": "North America",
-    "maps": []
+  {
+    "id": "VI",
+    "country": "Virgin Islands, U.S."
   },
-  "VN": {
+  {
+    "id": "VN",
     "country": "Viet Nam",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "vietnamLow", "vietnamHigh" ]
+    "map": "vietnamLow"
   },
-  "VU": {
-    "country": "Vanuatu",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "VU",
+    "country": "Vanuatu"
   },
-  "WF": {
-    "country": "Wallis and Futuna",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": []
+  {
+    "id": "WF",
+    "country": "Wallis and Futuna"
   },
-  "WS": {
+  {
+    "id": "WS",
     "country": "Samoa",
-    "continent_code": "OC",
-    "continent": "Oceania",
-    "maps": [ "samoaLow", "samoaHigh" ]
+    "map": "samoaLow"
   },
-  "YE": {
+  {
+    "id": "YE",
     "country": "Yemen",
-    "continent_code": "AS",
-    "continent": "Asia",
-    "maps": [ "yemenLow", "yemenHigh" ]
+    "map": "yemenLow"
   },
-  "YT": {
-    "country": "Mayotte",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": []
+  {
+    "id": "YT",
+    "country": "Mayotte"
   },
-  "ZA": {
+  {
+    "id": "ZA",
     "country": "South Africa",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "southAfricaLow", "southAfricaHigh" ]
+    "map": "southAfricaLow"
   },
-  "ZM": {
+  {
+    "id": "ZM",
     "country": "Zambia",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "zambiaLow", "zambiaHigh" ]
+    "map": "zambiaLow"
   },
-  "ZW": {
+  {
+    "id": "ZW",
     "country": "Zimbabwe",
-    "continent_code": "AF",
-    "continent": "Africa",
-    "maps": [ "zimbabweLow", "zimbabweHigh" ]
+    "map": "zimbabweLow"
   },
-  "XK": {
+  {
+    "id": "XK",
     "country": "Kosovo",
-    "continent_code": "EU",
-    "continent": "Europe",
-    "maps": [ "kosovoLow", "kosovoHigh" ]
+    "map": "kosovoLow"
   }
-}
+]

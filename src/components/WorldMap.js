@@ -11,6 +11,7 @@ import grey from '@material-ui/core/colors/grey';
 import _ from 'underscore'
 import countries from '../data/countries.json'
 import states from '../data/get-state-ids.json'
+import countriesWithStates from '../data/countries-with-states.json'
 
 // Themes begin
 am4core.useTheme(am4themes_animated);
@@ -29,21 +30,21 @@ class WorldMap extends Component {
   }
 
   getCountriesData() {
-    return _.map(countries, ({ country, maps }, id) => {
+    return _.map(countries, ({ country, map, id }) => {
       let value = this.getValue({ country })
 
       return {
         id,
         country,
-        map: maps[0],
-        value: value ? Math.log(value) + 1 : undefined,
+        map,
+        value: value ? Math.log(value) : undefined,
         tooltip: value ? `${country}: ${value.toLocaleString()}` : country,
       }
     })
   }
 
   hasStateData(country) {
-    return Object.keys(states).includes(country)
+    return countriesWithStates.includes(country)
   }
 
   getStatesData(country, map) {
@@ -56,7 +57,7 @@ class WorldMap extends Component {
 
       return {
         id,
-        value: value ? Math.log(value) + 1 : undefined,
+        value: value ? Math.log(value) : undefined,
         tooltip: value ? `${state}: ${value.toLocaleString()}` : state,
       }
     })

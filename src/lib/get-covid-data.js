@@ -4,19 +4,15 @@ import moment from 'moment'
 
 import fixStateNames from '../data/fix-state-names'
 import getStateId from '../data/get-state-ids.json'
-import getCountryId from '../data/get-country-id'
+import countries from '../data/countries.json'
 import flags from '../data/country-flags.json'
+import urls from '../data/data-sources.json'
 
-const urls = [{
-  title: 'confirmed',
-  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv`,
-}, {
-  title: 'deaths',
-  url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv`,
-// }, {
-//   title: 'recovered',
-//   url: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv`,
-}]
+const getCountryId = name => {
+  let item = countries.find(({ country }) => name === country)
+
+  return item ? item.id : undefined
+}
 
 // Transform data from source to geoJSON styling
 const transformItem = ({ title, item }) => {
@@ -65,7 +61,6 @@ const getCovidData = async () => {
   return _.chain(results)
     .map(({ title, data }) => data.map(item => transformItem({ title, item })))
     .flatten()
-    // .reject(({ state }) => /\(From Diamond Princess\)/.test(state)) // Remove people from Diamond Princess with countries
     .groupBy(({ data, ...params }) => JSON.stringify(params))
     .map((items, location) => ({
       ...JSON.parse(location),

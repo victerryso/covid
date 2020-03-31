@@ -17,18 +17,22 @@ const useStyles = makeStyles(theme => ({
 
 const countries = [
   {
+    id: 'AU',
     label: 'Australia',
     value: 'Australia',
   },
   {
+    id: 'CA',
     label: 'Canada',
     value: 'Canada',
   },
   {
+    id: 'CN',
     label: 'China',
     value: 'China',
   },
   // {
+  //   id: 'US',
   //   label: 'United States',
   //   value: 'United States',
   // },
@@ -46,10 +50,10 @@ const CountryChips = function (props) {
         onClick={() => props.handleClick()}
       />
 
-      {countries.map(({ label, value }, index) => (
+      {countries.map(({ id, label, value }, index) => (
         <Chip
           clickable
-          avatar={<Avatar>{flags[label]}</Avatar>}
+          avatar={<Avatar>{flags[id]}</Avatar>}
           label={label}
           onClick={() => props.handleClick({ country: value })}
           key={index}

@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Close from '@material-ui/icons/Close'
 import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
-import states from '../data/get-state-ids.json'
+import countriesWithStates from '../data/countries-with-states.json'
 
 const desc = function (a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) return -1
@@ -51,9 +51,7 @@ const headCells = [
   { id: 'total', numeric: true, label: 'Total' },
 ];
 
-const hasStates = country => {
-  return Object.keys(states).includes(country)
-}
+const hasStates = country => countriesWithStates.includes(country)
 
 const EnhancedTableHead = function (props) {
   const { order, orderBy, onRequestSort } = props;
