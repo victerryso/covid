@@ -88,6 +88,12 @@ const stateToCountry = [
   'Macau',
 ]
 
+const ships = [
+  'Grand Princess',
+  'Diamond Princess',
+  'MS Zaandam',
+]
+
 let fixStateName = ({ state, country }) => {
   // Change specific places owned by countries into countries
   if (stateToCountry.includes(state)) {
@@ -99,20 +105,16 @@ let fixStateName = ({ state, country }) => {
   state = states[state] || state
 
   // Change ship to location
-  if (state === 'Grand Princess') {
-    country = 'Others'
-  }
+  let ship = ships.find(ship => {
+    let regex = new RegExp(ship, 'i')
+    return regex.test(state) || regex.test(country)
+  })
 
-  // Change ship to location
-  if (/Diamond Princess/.test(state)) {
-    country = 'Others'
-    state = 'Diamond Princess'
-  }
-
-  // Change ship to location
-  if (/Diamond Princess/.test(country)) {
-    country = 'Others'
-    state = 'Diamond Princess'
+  if (ship) {
+    return {
+      state: ship,
+      country: 'Others'
+    }
   }
 
   // Canadian state id
