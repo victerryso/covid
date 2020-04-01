@@ -34,6 +34,7 @@ const transformItem = ({ title, item }) => {
     country,
     stateId,
     countryId,
+    trueCountry: item['Country/Region'],
     flag,
     latitude: item['Lat'],
     longitude: item['Long'],

@@ -59,6 +59,7 @@ const countries = {
   "Laos": "Lao People's Democratic Republic",
   "West Bank and Gaza": "Palestinian, State of",
   "Burma": "Myanmar",
+  "British Virgin Islands": "Virgin Islands, British",
 }
 
 const stateToCountry = [
@@ -86,6 +87,10 @@ const stateToCountry = [
   'Isle of Man',
   'Hong Kong',
   'Macau',
+  'Turks and Caicos Islands',
+  'British Virgin Islands',
+  'Anguilla',
+  'Martinique',
 ]
 
 const ships = [

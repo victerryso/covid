@@ -42,12 +42,12 @@ const Statistics = function (props) {
 
     return _.chain(props.mapData)
       .filter(({ country }) => props.country ? country === props.country : true)
-      // .reject(country => country === 'Others')
+      .reject(country => country === 'Others')
       .filter(item => {
         let data = _.findWhere(item.data, { date })
         return data && data.confirmed
       })
-      .pluck('country')
+      .pluck('trueCountry')
       .uniq()
       .result('length')
       .value()
