@@ -60,6 +60,7 @@ const countries = {
   "West Bank and Gaza": "Palestinian, State of",
   "Burma": "Myanmar",
   "British Virgin Islands": "Virgin Islands, British",
+  "Falkland Islands (Islas Malvinas)": "Falkland Islands (Malvinas)",
 }
 
 const stateToCountry = [
@@ -91,6 +92,8 @@ const stateToCountry = [
   'British Virgin Islands',
   'Anguilla',
   'Martinique',
+  'Bonaire, Sint Eustatius and Saba',
+  'Falkland Islands (Islas Malvinas)',
 ]
 
 const ships = [
