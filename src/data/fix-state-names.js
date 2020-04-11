@@ -94,6 +94,7 @@ const stateToCountry = [
   'Martinique',
   'Bonaire, Sint Eustatius and Saba',
   'Falkland Islands (Islas Malvinas)',
+  'Saint Pierre and Miquelon',
 ]
 
 const ships = [

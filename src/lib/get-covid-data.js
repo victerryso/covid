@@ -24,7 +24,6 @@ const transformItem = ({ title, item }) => {
     country: item['Country/Region']
   })
 
-
   let stateId = state && getStateId[country] && getStateId[country][state]
   let countryId = getCountryId(country)
   let flag = flags[countryId]
@@ -62,9 +61,11 @@ const getCovidData = async () => {
   return _.chain(results)
     .map(({ title, data }) => data.map(item => transformItem({ title, item })))
     .flatten()
-    .groupBy(({ data, ...params }) => JSON.stringify(params))
+    .groupBy(({ data, latitude, longitude, ...params }) => JSON.stringify(params))
     .map((items, location) => ({
       ...JSON.parse(location),
+      latitude: items[0].latitude,
+      longitude: items[0].longitude,
       data: _.chain(items)
         .pluck('data')
         .flatten()
@@ -83,6 +84,7 @@ const getCovidData = async () => {
         .value()
     }))
     .filter(({ country }) => country)
+    .tap(s=>console.log(_.last(s)))
     .value()
 }
 
