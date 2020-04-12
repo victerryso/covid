@@ -31,11 +31,11 @@ const countries = [
     label: 'China',
     value: 'China',
   },
-  // {
-  //   id: 'US',
-  //   label: 'United States',
-  //   value: 'United States',
-  // },
+  {
+    id: 'US',
+    label: 'United States',
+    value: 'United States',
+  },
 ]
 
 const CountryChips = function (props) {

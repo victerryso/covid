@@ -103,7 +103,7 @@ const ships = [
   'MS Zaandam',
 ]
 
-let fixStateName = ({ state, country }) => {
+let fixStateName = ({ state = '', country }) => {
   // Change specific places owned by countries into countries
   if (stateToCountry.includes(state)) {
     country = `${state}`

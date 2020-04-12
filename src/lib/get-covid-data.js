@@ -15,14 +15,19 @@ const getCountryId = name => {
 }
 
 // Transform data from source to geoJSON styling
-const transformItem = ({ title, item }) => {
-  let keys = ['Province/State', 'Country/Region', 'Lat', 'Long']
-  let dates = Object.keys(item).filter(key => !keys.includes(key))
-
+const transformItem = ({ title, item, exclusions = [] }) => {
   let { state, country } = fixStateNames({
-    state: item['Province/State'],
-    country: item['Country/Region']
+    state: item['Province/State'] || item['Province_State'],
+    country: item['Country/Region'] || item['Country_Region'],
   })
+
+  // Created specifically since US is added twice
+  if (exclusions.includes(country)) {
+    return
+  }
+
+  // Grab date keys
+  let dates = Object.keys(item).filter(key => /^(\d|\/)*$/.test(key))
 
   let stateId = state && getStateId[country] && getStateId[country][state]
   let countryId = getCountryId(country)
@@ -33,7 +38,7 @@ const transformItem = ({ title, item }) => {
     country,
     stateId,
     countryId,
-    trueCountry: item['Country/Region'],
+    trueCountry: item['Country/Region'] || item['Country_Region'],
     flag,
     latitude: item['Lat'],
     longitude: item['Long'],
@@ -46,12 +51,12 @@ const transformItem = ({ title, item }) => {
 }
 
 const getCovidData = async () => {
-  let promises = urls.map(({ title, url }) => {
+  let promises = urls.map(({ title, url, exclusions }) => {
     return new Promise(resolve => {
       Papa.parse(url, {
         header: true,
         download: true,
-        complete: ({ data }) => resolve({ title, data })
+        complete: ({ data }) => resolve({ title, data, exclusions })
       })
     })
   })
@@ -59,8 +64,9 @@ const getCovidData = async () => {
   let results = await Promise.all(promises)
 
   return _.chain(results)
-    .map(({ title, data }) => data.map(item => transformItem({ title, item })))
+    .map(({ title, data, exclusions }) => data.map(item => transformItem({ title, item, exclusions })))
     .flatten()
+    .compact()
     .groupBy(({ data, latitude, longitude, ...params }) => JSON.stringify(params))
     .map((items, location) => ({
       ...JSON.parse(location),
@@ -84,7 +90,6 @@ const getCovidData = async () => {
         .value()
     }))
     .filter(({ country }) => country)
-    // .filter(({ data }) => Object.keys(data[0]).includes('confirmed'))
     .value()
 }
 

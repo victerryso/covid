@@ -45,7 +45,6 @@ const getColor = count => {
 const getSign = count => count > 0 ? '+' : ''
 
 const headCells = [
-  // { id: 'flag', numeric: false, label: 'Flag' },
   { id: 'name', numeric: false, label: 'Country' },
   { id: 'increment', numeric: true, label: 'Change' },
   { id: 'total', numeric: true, label: 'Total' },
@@ -168,6 +167,7 @@ const EnhancedTable = function (props) {
       total: items.reduce((memo, { count }) => memo + (count || 0), 0),
       increment: items.reduce((memo, { increment }) => memo + (increment || 0), 0),
     }))
+    .filter(({ name }) => name)
     .sortBy('name')
     .sortBy(({ total }) => -total)
     .sortBy(({ increment }) => -increment)
