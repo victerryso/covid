@@ -79,12 +79,12 @@ const getCovidData = async () => {
         }))
         .map(item => ({
           ...item,
-          existing: item.confirmed - item.deaths,
+          existing: item.confirmed - item.deaths - (item.recovered || 0),
         }))
         .value()
     }))
     .filter(({ country }) => country)
-    .tap(s=>console.log(_.last(s)))
+    // .filter(({ data }) => Object.keys(data[0]).includes('confirmed'))
     .value()
 }
 

@@ -165,15 +165,15 @@ const EnhancedTable = function (props) {
     .map((items, name) => ({
       name,
       flag: items[0].flag,
-      total: items.reduce((memo, { count }) => memo + count, 0),
-      increment: items.reduce((memo, { increment }) => memo + increment, 0),
+      total: items.reduce((memo, { count }) => memo + (count || 0), 0),
+      increment: items.reduce((memo, { increment }) => memo + (increment || 0), 0),
     }))
     .sortBy('name')
     .sortBy(({ total }) => -total)
     .sortBy(({ increment }) => -increment)
     .value()
 
-  const count = rows.reduce((memo, { increment }) => memo + increment, 0)
+  const count = rows.reduce((memo, { increment }) => memo + (increment || 0), 0)
 
   const countryCell = row => (
     <div className={classes.countryCell}>

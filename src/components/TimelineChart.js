@@ -38,7 +38,7 @@ class TimelineChart extends Component {
       .groupBy('date')
       .map((items, date) => ({
         date: new Date(+date),
-        value: items.reduce((memo, item) => memo + item[status], 0)
+        value: items.reduce((memo, item) => memo + (item[status] || 0), 0)
       }))
       .value()
   }
@@ -68,7 +68,7 @@ class TimelineChart extends Component {
 
           return pointA[status] - (pointB ? pointB[status] : 0)
         })
-        .reduce((memo, increment) => memo + increment, 0)
+        .reduce((memo, increment) => memo + (increment || 0), 0)
         .value()
     }))
   }
@@ -86,7 +86,7 @@ class TimelineChart extends Component {
       .map((items, date) => ({
         name: state || country,
         date: new Date(+date),
-        value: items.reduce((memo, item) => memo + item[status], 0)
+        value: items.reduce((memo, item) => memo + (item[status] || 0), 0)
       }))
       .value()
   }

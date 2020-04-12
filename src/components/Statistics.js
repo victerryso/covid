@@ -22,12 +22,11 @@ const Statistics = function (props) {
   const getValue = ({ date, status }) => {
     return _.chain(props.mapData)
       .filter(({ country }) => props.country ? country === props.country : true)
-      // .reject(country => country === 'Others')
       .pluck('data')
       .flatten()
       .where({ date })
       .pluck(status)
-      .reduce((memo, value) => memo + value, 0)
+      .reduce((memo, value) => memo + (value || 0), 0)
       .value()
   }
 
@@ -82,6 +81,13 @@ const Statistics = function (props) {
       label: 'Deaths',
       value: getValue({ date, status: 'deaths' }),
       increment: getIncrementValue('deaths'),
+      hideOnSmall: false,
+
+    },
+    {
+      label: 'Recovered',
+      value: getValue({ date, status: 'recovered' }),
+      increment: getIncrementValue('recovered'),
       hideOnSmall: false,
 
     },

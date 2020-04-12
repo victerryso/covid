@@ -12,6 +12,7 @@ const StatusSelect = props => (
     >
       <MenuItem value='confirmed'>Confirmed</MenuItem>
       <MenuItem value='deaths'>Deaths</MenuItem>
+      <MenuItem value='recovered'>Recovered</MenuItem>
       <MenuItem value='existing'>Existing</MenuItem>
     </Select>
   </FormControl>

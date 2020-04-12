@@ -25,7 +25,7 @@ class WorldMap extends Component {
   getValue(params) {
     return _.chain(this.props.mapData)
       .where(params)
-      .reduce((memo, { value }) => memo + value, 0)
+      .reduce((memo, { value }) => memo + (value || 0), 0)
       .value()
   }
 
