@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
 
 const countries = [
   {
+    label: 'Worldwide',
+  },
+  {
     id: 'AU',
     label: 'Australia',
     value: 'Australia',
@@ -43,13 +46,6 @@ const CountryChips = function (props) {
 
   return (
     <div className={classes.root}>
-      <Chip
-        clickable
-        label="Reset"
-        disabled={!props.country}
-        onClick={() => props.handleClick()}
-      />
-
       {countries.map(({ id, label, value }, index) => (
         <Chip
           clickable
@@ -57,7 +53,7 @@ const CountryChips = function (props) {
           label={label}
           onClick={() => props.handleClick({ country: value })}
           key={index}
-          color={label === props.country ? 'primary' : 'default'}
+          color={value === props.country ? 'primary' : 'default'}
         />
       ))}
     </div>

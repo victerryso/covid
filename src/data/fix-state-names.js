@@ -120,7 +120,7 @@ let fixStateName = ({ state = '', country }) => {
   })
 
   if (ship) {
-    return
+    return {}
   }
 
   // Canadian state id
