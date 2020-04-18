@@ -4,17 +4,22 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_dark from "@amcharts/amcharts4/themes/dark";
-import Paper from '@material-ui/core/Paper';
 import red from '@material-ui/core/colors/red';
 import green from '@material-ui/core/colors/green';
 import yellow from '@material-ui/core/colors/yellow';
-
 
 /* Chart code */
 // Themes begin
 am4core.useTheme(am4themes_dark);
 am4core.useTheme(am4themes_animated);
 // Themes end
+
+const style = {
+  width: "100%",
+  height: '100%',
+  minHeight: 360,
+  marginBottom: 8,
+}
 
 class TimelineChart extends Component {
   primaryColor = red[500]
@@ -26,13 +31,17 @@ class TimelineChart extends Component {
 
     if (this.chart) {
       let series = this.chart.series.values[0]
-      let name = state ? country : 'Worldwide'
+      let name = state || country || 'Worldwide'
 
       series.tooltipText = `${name}: {value}`
     }
 
     return _.chain(mapData)
-      .filter(item => state ? item.country === country : true)
+      .filter(item => {
+        if (state)   return _.isMatch(item, { country, state })
+        if (country) return item.country === country
+                     return true
+      })
       .pluck('data')
       .flatten()
       .groupBy('date')
@@ -50,7 +59,7 @@ class TimelineChart extends Component {
       let series = this.chart.series.values[1]
       let name = state || country || 'Worldwide'
 
-      series.yAxis = country ? this.countryAxis : this.valueAxis
+      // series.yAxis = country ? this.countryAxis : this.valueAxis
       series.tooltipText = `${name} Increment: {value}`
     }
 
@@ -116,6 +125,7 @@ class TimelineChart extends Component {
     valueAxis.numberFormatter = new am4core.NumberFormatter();
     valueAxis.numberFormatter.numberFormat = "#a";
     valueAxis.min = 0
+    valueAxis.renderer.opposite = true;
 
     // Create worldwide line series
     let lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -145,24 +155,24 @@ class TimelineChart extends Component {
     columnSeries.data = this.getColumnData()
 
     // Create country line series
-    let countryAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    countryAxis.renderer.opposite = true;
-    countryAxis.cursorTooltipEnabled = false;
-    countryAxis.min = 0
+    // let countryAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    // countryAxis.renderer.opposite = true;
+    // countryAxis.cursorTooltipEnabled = false;
+    // countryAxis.min = 0
 
-    // Use 000s suffix
-    countryAxis.numberFormatter = new am4core.NumberFormatter();
-    countryAxis.numberFormatter.numberFormat = "#a";
+    // // Use 000s suffix
+    // countryAxis.numberFormatter = new am4core.NumberFormatter();
+    // countryAxis.numberFormatter.numberFormat = "#a";
 
-    var countrySeries = chart.series.push(new am4charts.LineSeries())
-    countrySeries.dataFields.valueY = "value";
-    countrySeries.dataFields.dateX = "date";
-    countrySeries.yAxis = countryAxis;
+    // var countrySeries = chart.series.push(new am4charts.LineSeries())
+    // countrySeries.dataFields.valueY = "value";
+    // countrySeries.dataFields.dateX = "date";
+    // countrySeries.yAxis = countryAxis;
 
-    countrySeries.tooltipText = "{name}: {value}"
-    countrySeries.fill = am4core.color(this.secondaryColor);
-    countrySeries.stroke = am4core.color(this.secondaryColor);
-    countrySeries.strokeWidth = 5;
+    // countrySeries.tooltipText = "{name}: {value}"
+    // countrySeries.fill = am4core.color(this.secondaryColor);
+    // countrySeries.stroke = am4core.color(this.secondaryColor);
+    // countrySeries.strokeWidth = 5;
 
     // let countryBullet = countrySeries.bullets.push(new am4charts.Bullet());
     // countryBullet.fill = am4core.color(this.secondaryColor); // tooltips grab fill from parent by default
@@ -170,7 +180,7 @@ class TimelineChart extends Component {
     // let countryCircle = countryBullet.createChild(am4core.Circle);
     // countryCircle.radius = 4;
 
-    countrySeries.data = this.getCountryData()
+    // countrySeries.data = this.getCountryData()
 
     // Mouse Crosshair
     chart.cursor = new am4charts.XYCursor();
@@ -178,10 +188,10 @@ class TimelineChart extends Component {
 
     // Add Date Line
     this.middleLine = chart.plotContainer.createChild(am4core.Line);
-    this.middleLine.strokeOpacity = 0.25;
-    this.middleLine.stroke = am4core.color("#fff");
-    this.middleLine.strokeWidth = 3;
-    this.middleLine.strokeDasharray = "5";
+    // this.middleLine.strokeOpacity = 0.25;
+    this.middleLine.stroke = am4core.color(this.secondaryColor);
+    this.middleLine.strokeWidth = 2;
+    // this.middleLine.strokeDasharray = "5";
     this.middleLine.x = this.getDateLine()
     this.middleLine.zIndex = 1;
     this.middleLine.adapter.add("y2", function (y2, target) {
@@ -189,7 +199,7 @@ class TimelineChart extends Component {
     })
 
     this.chart = chart;
-    this.countryAxis = countryAxis
+    // this.countryAxis = countryAxis
     this.valueAxis = valueAxis
   }
 
@@ -203,7 +213,7 @@ class TimelineChart extends Component {
     if (this.chart) {
       this.applyData(0, this.getLineData())
       this.applyData(1, this.getColumnData())
-      this.applyData(2, this.getCountryData())
+      // this.applyData(2, this.getCountryData())
     }
 
     if (this.middleLine) {
@@ -211,9 +221,7 @@ class TimelineChart extends Component {
     }
 
     return (
-      <Paper style={{ height: '100%', padding: 8 }}>
-        <div id="timeline-chart" style={{ width: "100%", height: '100%', minHeight: 360 }} />
-      </Paper>
+      <div id="timeline-chart" style={style} />
     );
   }
 }

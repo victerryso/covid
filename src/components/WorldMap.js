@@ -271,8 +271,6 @@ class WorldMap extends Component {
           this.chart.series.values[index].data = value
         }
       })
-
-      this.changeMaxValue()
     }
 
     return (

@@ -114,13 +114,15 @@ const EnhancedTableToolbar = props => {
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    marginBottom: theme.spacing(1),
   },
   paper: {
     width: '100%',
   },
   tableWrapper: {
     overflow: 'auto',
-    height: 33 * 9.5 + 38,
+    maxHeight: 'calc(100vh - 64px - 16px)',
+    // height: 33 * 9.5 + 38,
   },
   flag: {
     width: 19,

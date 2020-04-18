@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
@@ -205,31 +204,23 @@ function App() {
               handleChange={setDate}
             />
 
-            <Grid container spacing={1}>
+            <TimelineChart
+              mapData={mapData}
+              date={currentDate}
+              status={status}
+              country={country}
+              dates={dates}
+              state={state}
+            />
 
-              <Grid item sm className={classes.paper}>
-                <DailyTable
-                  mapData={mapData}
-                  date={currentDate}
-                  status={status}
-                  country={country}
-                  state={state}
-                  handleClick={handleClick}
-                />
-              </Grid>
-
-              <Grid item sm className={classes.paper}>
-                <TimelineChart
-                  mapData={mapData}
-                  date={currentDate}
-                  status={status}
-                  country={country}
-                  dates={dates}
-                  state={state}
-                />
-              </Grid>
-
-            </Grid>
+            <DailyTable
+              mapData={mapData}
+              date={currentDate}
+              status={status}
+              country={country}
+              state={state}
+              handleClick={handleClick}
+            />
 
           </div>
 
